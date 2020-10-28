@@ -1,19 +1,16 @@
 ﻿using Discord;
 using Discord.WebSocket;
+using DoomBot.Server.Managers;
 
 namespace DoomBot.Server.Controllers.Attributes
 {
     public class UserAccessor
     {
-        public SocketGuildUser User { get; private set; }
+        public AuthUser AuthUser { get; private set; }
 
-        public long Token { get; private set; }
-
-        public void ReadUserAs(SocketGuildUser User, long Token)
+        public void ReadUserAs(AuthUser User)
         {
-            this.User = User;
-
-            this.Token = Token;
+            this.AuthUser = User;
         }
     }
 }

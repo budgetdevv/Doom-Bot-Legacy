@@ -2,15 +2,19 @@
 
 @using DoomBot.Shared.Perks
 
+@implements IDisposable
+
 @code{
     private bool Toggled;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        while (!CUD.Ready)
-        {
-            await Task.Delay(1);
-        }
+        CUD.OnDownloadComplete += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CUD.OnDownloadComplete -= StateHasChanged;
     }
 }
 
@@ -99,7 +103,7 @@
 
                         <hr class="navbar-divider">
 
-                        <a class="navbar-item">
+                        <a class="navbar-item" href="/Bearer">
                             Logout
                         </a>
 

@@ -32,7 +32,7 @@ namespace DoomBot.Server.Controllers.Perks
         [HttpGet()]
         public async Task<RoleData> GetData()
         {
-            using var Data = await RPM.GenRoleData(UA.User);
+            using var Data = await RPM.GenRoleData(UA.AuthUser?.GUser);
 
             return Data;
         }
@@ -42,7 +42,7 @@ namespace DoomBot.Server.Controllers.Perks
         {
             using var RD = _RD;
 
-            return await RPM.TrySetRoleData(UA.User, RD);
+            return await RPM.TrySetRoleData(UA.AuthUser.GUser, RD);
         }
     }
 }

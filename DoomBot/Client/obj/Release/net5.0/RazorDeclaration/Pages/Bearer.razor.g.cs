@@ -76,14 +76,14 @@ using DoomBot.Client.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\Pages\Bearer.razor"
+#line 5 "C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\Pages\Bearer.razor"
 using DoomBot.Shared;
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/Bearer")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Bearer/{BToken:long}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Bearer/{UserID}/{BToken}")]
     public partial class Bearer : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -92,18 +92,18 @@ using DoomBot.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 12 "C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\Pages\Bearer.razor"
+#line 11 "C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\Pages\Bearer.razor"
       
 
     [Parameter]
-    public long BToken { get; set; }
+    public string UserID { get; set; }
 
-
+    [Parameter]
+    public string BToken { get; set; }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ClientUserData Data { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient HC { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NM { get; set; }
     }

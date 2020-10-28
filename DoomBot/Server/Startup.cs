@@ -7,6 +7,7 @@ using DoomBot.Server.Controllers.Attributes;
 using DoomBot.Server.Managers;
 using DoomBot.Server.Modules;
 using DoomBot.Server.MongoDB;
+using DoomBot.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,7 +38,13 @@ namespace DoomBot.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection Services)
         {
-            Services.AddControllersWithViews().AddNewtonsoftJson();
+            //Services.AddControllersWithViews().AddNewtonsoftJson();
+
+            Services.AddControllersWithViews().AddJsonOptions(x =>
+             {
+                 x.JsonSerializerOptions.Converters.Add(new ValueTupleFactory());
+             });
+
             Services.AddRazorPages();
 
             Services.AddSingleton<HttpClient>();

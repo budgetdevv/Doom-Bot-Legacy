@@ -20,6 +20,10 @@ namespace DoomBot.Client
 
         public bool Ready = false;
 
+        public delegate void OnUpdate();
+
+        public event OnUpdate OnDownloadComplete;
+
         //Perks
 
         public RoleData RoleData;
@@ -32,44 +36,66 @@ namespace DoomBot.Client
 
             this.HC = HC;
 
-            if (SLS.ContainKey("AuthToken"))
+            Task.Run(() =>
             {
-                _ = Task.Run(async () =>
-                {
-                    await LoginCallback(SLS.GetItemAsString("AuthToken"));
-
-                    Ready = true;
-                });
-            }
-
-            else
-            {
-                Ready = true;
-            }
+                _ = Boot();
+            });
         }
 
-        public async Task LoginCallback(string AccessToken)
+        private void SetUserID(string UserID)
         {
-            try
-            {
-                await LS.SetItemAsync("AuthToken", AccessToken);
+            SLS.SetItem("UserID", UserID);
 
-                //HC.DefaultRequestHeaders.Clear();
+            SetUserIDHeader(UserID);
+        }
 
-                HC.DefaultRequestHeaders.Add("AuthToken", AccessToken);
+        private void SetUserIDHeader(string UserID)
+        {
+            HC.DefaultRequestHeaders.Remove("UserID");
 
-                await GetClientData();
-            }
+            HC.DefaultRequestHeaders.Add("UserID", UserID);
+        }
 
-            catch (Exception Ex)
-            {
-                Console.WriteLine(Ex);
-            }
+        private void SetAuthToken(string AuthToken)
+        {
+            SLS.SetItem("AuthToken", AuthToken);
+
+            SetAuthTokenHeader(AuthToken);
+        }
+
+        private void SetAuthTokenHeader(string AuthToken)
+        {
+            HC.DefaultRequestHeaders.Remove("AuthToken");
+
+            HC.DefaultRequestHeaders.Add("AuthToken", AuthToken);
+        }
+
+        private async Task Boot()
+        {
+            SetUserIDHeader(SLS.GetItemAsString("UserID"));
+
+            SetAuthTokenHeader(SLS.GetItemAsString("AuthToken"));
+
+            await GetClientData();
+
+            Ready = true;
+        }
+
+        private async Task LoginCallback(string AuthToken)
+        {
+            SetAuthToken(AuthToken);
+
+            await GetClientData();
         }
 
         public async Task GetClientData()
         {
             BaseData = await HC.GetAs<(string Username, string AvatarURL, Perk[] Perks)>("Users/Data");
+
+            if (BaseData == default)
+            {
+                return;
+            }
 
             var Perks = BaseData.Perks;
 
@@ -89,6 +115,8 @@ namespace DoomBot.Client
                         }
                 }
             }
+
+            OnDownloadComplete.Invoke();
         }
 
         public async Task UpdateRoleData()
@@ -99,6 +127,31 @@ namespace DoomBot.Client
         public async Task RevertRoleData()
         {
             RoleData = await HC.GetAs<RoleData>("Perks/Roles");
+        }
+
+        public async Task TryLogin(string UserID, string Bearer)
+        {
+            SetUserID(UserID);
+
+            long Token = await HC.GetAs<long>($"Auth/{Bearer}");
+
+            if (Token != default)
+            {
+                await LoginCallback(Token.ToString());
+            }
+        }
+
+        public void Logout()
+        {
+            _ = HC.GetAsync("Auth");
+
+            //Just have to remove one to break the system
+
+            SLS.RemoveItem("AuthToken");
+
+            BaseData = default;
+
+            OnDownloadComplete.Invoke();
         }
     }
 }

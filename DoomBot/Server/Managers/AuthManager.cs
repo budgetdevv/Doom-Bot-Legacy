@@ -16,99 +16,109 @@ namespace DoomBot.Server.Managers
 {
     public class AuthManager
     {
-        private Dictionary<long, SocketGuildUser> LoggedInUsers;
-
-        private HashSet<(long Bearer, SocketGuildUser User)> ValidBearer;
-
-        private HashSet<SocketGuildUser> LockedUsers;
+        private HashSet<(long UserID, AuthUser AuthUser)> LoggedInUsers;
 
         private SnowflakeEngine SE;
 
         public AuthManager(SnowflakeEngine SE)
         {
-            LoggedInUsers = new Dictionary<long, SocketGuildUser>();
-
-            ValidBearer = new HashSet<(long Bearer, SocketGuildUser User)>(new ValidBearerComparer());
-
-            LockedUsers = new HashSet<SocketGuildUser>();
+            LoggedInUsers = new HashSet<(long UserID, AuthUser GUser)>(new LoggedInComparer());
 
             this.SE = SE;
         }
 
-        public (SocketGuildUser GUser, long Token) TryAuth(HttpContext Context)
+        public (long UserID, AuthUser GUser) TryAuth(HttpContext Context)
         {
-            if (!long.TryParse(Context.Request.Headers["AuthToken"], out long Token) || !LoggedInUsers.TryGetValue(Token, out SocketGuildUser User) || User == default)
+            if (!long.TryParse(Context.Request.Headers["AuthToken"], out long Token) || !long.TryParse(Context.Request.Headers["UserID"], out long UserID) || !LoggedInUsers.TryGetValue((UserID, null), out var Data) || !Data.AuthUser.IsValidToken(Token))
             {
                 return default;
             }
 
-            return (User, Token);
-        }
-
-        public long GenBearer(SocketGuildUser GUser)
-        {
-            if (LockedUsers.Contains(GUser))
+            if (Data.AuthUser.GUser == default)
             {
-                return 0;
+                LoggedInUsers.Remove(Data);
+
+                return default;
             }
 
-            LockedUsers.Add(GUser);
+            return Data;
+        }
 
-            long Bearer = SE.Gen();
+        public (long UserID, long Bearer) GenBearer(SocketGuildUser GUser)
+        {
+            long UserID = (long)GUser.Id;
 
-            var Stuff = (Bearer, GUser);
-
-            ValidBearer.Add(Stuff);
-
-            _ = Task.Run(async () =>
+            if (LoggedInUsers.TryGetValue((UserID, null), out var Data))
             {
-                await Task.Delay(TimeSpan.FromMinutes(5));
+                return (UserID, Data.AuthUser.GenBearer());
+            }
 
-                InvalidateBearer(Bearer, GUser);
-            });
+            else
+            {
+                Data = (UserID, new AuthUser(GUser, SE));
 
-            return Bearer;
+                LoggedInUsers.Add(Data);
+
+                return (UserID, Data.AuthUser.GenBearer());
+            }
         }
 
-        public void InvalidateBearer(long Bearer, SocketGuildUser User)
+        public long Login(HttpContext HC, long Bearer)
         {
-            ValidBearer.Remove((Bearer, User));
-
-            LockedUsers.Remove(User);
-        }
-
-        public long Login(long Bearer)
-        {
-            if (!ValidBearer.TryGetValue((Bearer, null), out var Data))
+            if (!long.TryParse(HC.Request.Headers["UserID"], out long UserID))
             {
                 return default;
             }
 
-            InvalidateBearer(Bearer, Data.User);
+            if (!LoggedInUsers.TryGetValue((UserID, null), out var Data))
+            {
+                return default;
+            }
 
-            long Token = SE.Gen();
+            //Console.WriteLine($"Logging in - {UserID}");
 
-            LoggedInUsers.Add(Token, Data.User);
-
-            return Token;
+            return Data.AuthUser.GetToken(HC, Bearer);
         }
 
-        public void Logout(long Bearer)
+        public void Logout(HttpContext HC, long Token)
         {
-            LoggedInUsers.Remove(Bearer);
+            if (!long.TryParse(HC.Request.Headers["UserID"], out long UserID))
+            {
+                return;
+            }
+
+            if (!LoggedInUsers.TryGetValue((UserID, null), out var Data))
+            {
+                return;
+            }
+
+            //If all devices are logged out
+
+            if (Data.AuthUser.RevokeToken(Token))
+            {
+                LoggedInUsers.Remove(Data);
+            }
+        }
+
+        public void InvalidateBearer(long UserID)
+        {
+            if (LoggedInUsers.TryGetValue((UserID, null), out var Data))
+            {
+                Data.AuthUser.InvalidateBearer();
+            }
         }
     }
 
-    public class ValidBearerComparer : IEqualityComparer<(long Bearer, SocketGuildUser User)>
+    public class LoggedInComparer : IEqualityComparer<(long UserID, AuthUser AuthUser)>
     {
-        public bool Equals((long Bearer, SocketGuildUser User) X, (long Bearer, SocketGuildUser User) Y)
+        public bool Equals((long UserID, AuthUser AuthUser) X, (long UserID, AuthUser AuthUser) Y)
         {
-            return (X.Bearer == Y.Bearer);
+            return (X.UserID == Y.UserID);
         }
 
-        public int GetHashCode((long Bearer, SocketGuildUser User) Obj)
+        public int GetHashCode((long UserID, AuthUser AuthUser) Obj)
         {
-            return Obj.Bearer.GetHashCode();
+            return Obj.UserID.GetHashCode();
         }
     }
 }

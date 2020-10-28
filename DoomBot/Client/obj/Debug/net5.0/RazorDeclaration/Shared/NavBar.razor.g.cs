@@ -82,7 +82,7 @@ using DoomBot.Shared.Perks;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavBar : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class NavBar : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -90,16 +90,18 @@ using DoomBot.Shared.Perks;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 5 "C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\Shared\NavBar.razor"
+#line 7 "C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\Shared\NavBar.razor"
       
     private bool Toggled;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        while (!CUD.Ready)
-        {
-            await Task.Delay(1);
-        }
+        CUD.OnDownloadComplete += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        CUD.OnDownloadComplete -= StateHasChanged;
     }
 
 #line default

@@ -4,7 +4,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\wi
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\DoomBot.Server.pdb
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\favicon.ico
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\index.html
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\dotnet.timezones.blat
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\dotnet.wasm
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\icudt.dat
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\icudt_CJK.dat
@@ -15,7 +14,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\wi
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\blazor.webassembly.js
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\favicon.ico.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\index.html.br
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\dotnet.timezones.blat.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\dotnet.wasm.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\icudt.dat.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\icudt_CJK.dat.br
@@ -80,7 +78,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\wi
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\blazor.webassembly.js.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\favicon.ico.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\index.html.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\dotnet.timezones.blat.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\dotnet.wasm.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\icudt.dat.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\obj\Release\net5.0\win-x64\PubTmp\Out\wwwroot\_framework\icudt_CJK.dat.gz

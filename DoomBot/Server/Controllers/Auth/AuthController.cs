@@ -32,14 +32,14 @@ namespace DoomBot.Server.Controllers.Perks
         [HttpGet("{Bearer}")]
         public long Login(long Bearer)
         {
-            return AM.Login(Bearer);
+            return AM.Login(HttpContext, Bearer);
         }
 
-        [AccessUser]
+        [RequireUserAccess]
         [HttpGet()]
         public void Logout(long Bearer)
         {
-            AM.Logout(UA.Token);
+            AM.Logout(HttpContext, Bearer);
         }
     }
 }

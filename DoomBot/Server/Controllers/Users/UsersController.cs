@@ -34,16 +34,11 @@ namespace DoomBot.Server.Controllers.Perks
             this.PM = PM;
         }
 
-        [AccessUser]
+        [RequireUserAccess]
         [HttpGet("Data")]
         public (string Username, string AvatarURL, Perk[] Perks) GetUserData()
         {
-            var User = UA.User;
-
-            if (User == default)
-            {
-                return default;
-            }
+            var User = UA.AuthUser.GUser;
 
             return (User.ToString(), User.GetAvatarUrl() ?? User.GetDefaultAvatarUrl(), PM.GetUserPerks(User));
         }

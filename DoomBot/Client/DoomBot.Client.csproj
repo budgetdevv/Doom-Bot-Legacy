@@ -10,9 +10,9 @@
 		<BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
 	</PropertyGroup>
 	
-	<ItemGroup>
+	<!--<ItemGroup>
 		<BlazorLinkerDescriptor Include="LinkerConfig.xml" />
-	</ItemGroup>
+	</ItemGroup>-->
 
   <ItemGroup>
 	  <PackageReference Include="Blazored.LocalStorage" Version="3.0.0" />
