@@ -1,0 +1,75 @@
+﻿@code{
+    [Parameter]
+
+    public (string Name, Func<bool> Enabled, Action Callback)[] Stuff { get; set; }
+
+    [Parameter]
+
+    public RenderFragment ChildContent { get; set; }
+
+    private string CurrentStuff;
+
+    protected override void OnInitialized()
+    {
+        if (Stuff.Length == 0)
+        {
+            return;
+        }
+
+        var S = Stuff[0];
+
+        CurrentStuff = S.Name;
+
+        S.Callback.Invoke();
+    }
+}
+
+<section class="hero is-primary is-medium">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+    </div>
+
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body" style="background-image: url(https://cdn.discordapp.com/attachments/769521085653450763/769525946000080906/KingsAndQueensExtended.png);
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #F5F2B3;
+    ">
+        <div class="container has-text-centered">
+
+            @ChildContent
+
+        </div>
+    </div>
+
+    @*Hero footer: will stick at the bottom*@
+
+    <div class="hero-foot" style="background-color: #F5F2B3">
+        <nav class="tabs is-centered">
+            <div class="container">
+                <ul>
+
+                    @foreach (var S in Stuff)
+                    {
+                        if (S.Name == CurrentStuff)
+                        {
+                            <li class="is-active"><a class="has-text-dark">@S.Name</a></li>
+                        }
+
+                        else if (S.Enabled.Invoke())
+                        {
+                            <li @onclick="@( () => { CurrentStuff = S.Name; S.Callback.Invoke(); } )"><a class="has-text-dark">@S.Name</a></li>
+                        }
+
+                        else
+                        {
+                            <li><a class="has-text-dark">@S.Name</a></li>
+                        }
+                    }
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>

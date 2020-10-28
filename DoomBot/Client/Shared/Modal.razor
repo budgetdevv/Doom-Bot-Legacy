@@ -1,0 +1,53 @@
+﻿@code {
+    [Parameter]
+
+    public string Title { get; set; }
+
+    [Parameter]
+
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+
+    public EventCallback OKAction { get; set; }
+
+    [Parameter]
+
+    public EventCallback CancelAction { get; set; }
+
+    [Parameter]
+
+    public bool Enabled { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Enabled = false;
+    }
+
+    private void Cancel()
+    {
+        if (CancelAction.HasDelegate)
+        {
+            CancelAction.InvokeAsync();
+        }
+    }
+}
+
+<div class="modal @( (Enabled) ? "is-active" : default )">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">@Title</p>
+            <button class="delete" @onclick="@Cancel"></button>
+        </header>
+        <section class="modal-card-body">
+
+            @ChildContent
+
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" @onclick="@( () => { Enabled = false; _  = OKAction.InvokeAsync(default); } )">Ok</button>
+            <button class="button" @onclick="@Cancel">Cancel</button>
+        </footer>
+    </div>
+</div>

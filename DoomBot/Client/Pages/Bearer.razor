@@ -1,0 +1,46 @@
+﻿@page "/Bearer"
+@page "/Bearer/{BToken:long}"
+
+@using DoomBot.Shared;
+
+@inject NavigationManager NM
+
+@inject HttpClient HC
+
+@inject ClientUserData Data
+
+@code{
+
+    [Parameter]
+    public long BToken { get; set; }
+
+
+}
+
+<ClientDataWrapper OnDataReady="@( async (x) =>
+                                   {
+
+                                       if (BToken == default)
+                                       {
+                                           _ = HC.GetAsync("Auth");
+
+                                           Data.BaseData = default;
+                                       }
+
+                                       else if (Data.BaseData.Username == default)
+                                       {
+                                           BToken = await HC.GetAs<long>($"Auth/{BToken}");
+
+                                           if (BToken != default)
+                                           {
+                                               await Data.LoginCallback(BToken.ToString());
+                                           }
+                                       }
+
+                                       NM.NavigateTo($"", true);
+                                   })">
+
+</ClientDataWrapper>
+
+
+

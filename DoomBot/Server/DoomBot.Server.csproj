@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Discord.Net" Version="2.3.0-dev-20201014.8" />
+	  <PackageReference Include="IdGen" Version="3.0.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.0-rc.2.20475.17" />
+	  <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
+	  <PackageReference Include="MongoDB.Serializer.ValueTuple" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Client\DoomBot.Client.csproj" />
+    <ProjectReference Include="..\Shared\DoomBot.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Recycler">
+      <HintPath>..\Shared\Recycler\Recycler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Command\Attributes\" />
+  </ItemGroup>
+
+
+</Project>

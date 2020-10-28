@@ -1,0 +1,108 @@
+﻿@page "/"
+
+@using DoomBot.Shared;
+
+@inject HttpClient HC
+
+@code{    
+    (int Online, int Total) Membercount;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Membercount = await HC.GetAs <(int, int)>("Guild/Presence");
+    }
+}
+
+<section class="hero is-fullheight">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body" style="background-image: url(https://cdn.discordapp.com/attachments/769521085653450763/769525946000080906/KingsAndQueensExtended.png);
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-color: #F5F2B3;
+    ">
+
+        <div class="container has-text-centered">
+
+            <h1 class="title is-1">Kings & Queens</h1>
+
+            <h2 class="subtitle">
+                Join today for the ULTIMATE Discord Experience!
+            </h2>
+
+            <br /><br />
+
+            <div class="columns is-centered has-text-centered">
+
+                <div class="column is-2 is-centered">
+                    <article class="message">
+
+                        <div class="message-header">
+                            <p>Online Members</p>
+                        </div>
+
+                        <div class="message-body">
+                            @Membercount.Online
+                            <br />
+                        </div>
+
+                    </article>
+                </div>
+
+                <div class="column is-2 is-centered">
+                    <article class="message">
+
+                        <div class="message-header">
+                            <p>Total Members</p>
+                        </div>
+
+                        <div class="message-body">
+                            @Membercount.Total
+                            <br />
+                        </div>
+
+                    </article>
+                </div>
+
+            </div>
+
+            <br /><br />
+
+            <a class="button is-large" style="border: 5px solid black; border-color: #FFB52C; background-color: #E1DC76" href="https://discord.gg/kfnPZmR">Join us Today!</a>
+
+        </div>
+
+        @*<div class="columns">
+            <div class="column is-one-third">
+                <button class="button is-large">Join us Today!</button>
+            </div>
+        </div>*@
+
+    </div>
+
+    <!-- Hero footer: will stick at the bottom -->
+    <!--<div class="hero-foot" style="background-color: #F5F2B3">
+        <nav class="tabs">
+            <div class="container">
+                <ul>
+                    <li class="is-active"><a>Overview</a></li>
+                    <li><a>Modifiers</a></li>
+                    <li><a>Grid</a></li>
+                    <li><a>Elements</a></li>
+                    <li><a>Components</a></li>
+                    <li><a>Layout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>-->
+
+</section>
+
+@*<section class="hero is-medium" style="background-color: #F5F2B3">
+        <div class="hero-body">
+
+        </div>
+    </section>*@
+
+
+

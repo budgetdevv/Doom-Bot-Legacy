@@ -1,0 +1,181 @@
+﻿@page "/Perks/Role"
+
+@inject NavigationManager NM
+
+@inject HttpClient HC
+
+@code{
+    private (string Name, Func<bool> Enabled, Action Callback)[] Stuff;
+
+    private bool CreateRole;
+
+    private string Sel;
+
+    private string NewRoleName;
+
+    protected override void OnInitialized()
+    {
+        CreateRole = false;
+    }
+}
+
+<ClientDataWrapper Context="Data" OnDataReady="@((x) =>
+                                                                    {
+
+                                                     bool Yes = x.BaseData.Perks.Contains(DoomBot.Shared.Perks.Perk.RoleCustomizerPerk);
+
+                                                     Stuff = new (string Name, Func<bool> Enabled, Action Callback)[]
+                                                     {
+                           ("Overview", () => true, () => { Sel = "Overview"; StateHasChanged(); } ),
+
+                           ("Name", () => Yes, () => { Sel = "Name"; StateHasChanged(); } ),
+
+                           ("Color", () => Yes, () => { Sel = "Color"; StateHasChanged(); } ),
+
+                           ("Visibility", () => Yes, () => { Sel = "Visibility"; StateHasChanged(); } )
+
+                                                     };
+                                                 })">
+
+
+    <HeroMed Stuff="Stuff">
+        <h1 class="title is-1 has-text-dark">Role Perk</h1>
+
+        <h2 class="subtitle has-text-dark">
+            Manage your Custom Role here ( If you have one haha )
+        </h2>
+    </HeroMed>
+
+    <section class="section">
+        @if (Data.BaseData.Username == default)
+        {
+            NM.NavigateTo("");
+        }
+
+
+        else if (Data.BaseData.Perks.Contains(DoomBot.Shared.Perks.Perk.RolePerk))
+        {
+            bool UpdateButtons = false;
+
+            <div class="columns is-centered">
+                <div class="column is-one-fifth">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-square">
+                                <img src="@Data.BaseData.AvatarURL" alt="Avatar">
+                            </figure>
+                        </div>
+                        <div class="card-content has-text-centered">
+                            <p class="title is-4">@Data.BaseData.Username</p>
+
+                            <div class="content">
+
+                                @if (Data.RoleData == default)
+                                {
+                                    <button class="button is-dark" @onclick="@( () => { CreateRole = true; } )">Create Role!</button>
+                                }
+
+                                else
+                                {
+                                    UpdateButtons = true;
+
+                                    switch (Sel)
+                                    {
+                                        case "Overview":
+                                            {
+                                                <span class="tag is-medium" style="background-color: @Data.RoleData.ColorString">
+                                                    @Data.RoleData.Name
+                                                </span>
+
+                                                <br/><br/><br/>
+
+                                                <label class="checkbox">
+                                                    <input type="checkbox" @bind="Data.RoleData.Enabled">
+                                                    Toggled ( Assigned to you )
+                                                </label>
+
+                                                break;
+                                            }
+
+                                        case "Name":
+                                            {
+                                                {
+                                                    <input class="input" type="text" placeholder="Role Name" @bind="Data.RoleData.Name" />
+
+                                                    break;
+                                                }
+                                            }
+
+                                        case "Color":
+                                            {
+                                                {
+                                                    <input type="color" id="colorpicker" @bind="Data.RoleData.ColorString">
+
+                                                    break;
+                                                }
+                                            }
+
+                                        case "Visibility":
+                                            {
+                                                <label class="checkbox">
+                                                    <input type="checkbox" @bind="Data.RoleData.Hoisted">
+                                                    Visible ( Online List )
+                                                </label>
+
+                                                break;
+                                            }
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            if (UpdateButtons)
+            {
+                <br/>
+
+                <div class="columns is-centered">
+
+                    <div class="columns is-centered">
+                        <div class="column">
+                            <button class="button is-dark" @onclick="@( async () => await Data.UpdateRoleData() )">Save Changes</button>
+
+                            <button class="button is-light" @onclick="@( async () => await Data.RevertRoleData() )">Discard Changes</button>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        }
+
+        else
+        {
+            <h1 class="title is-1 has-text-dark">You do NOT have the Perk! Consider purchasing it in our Shop!</h1>
+        }
+    </section>
+
+    @if (true)
+    {
+        <Modal Title="Create New Role" Enabled="CreateRole"
+               OKAction="@( async () => { CreateRole = false; Data.RoleData = new DoomBot.Shared.Perks.Role.RoleData() { Name = NewRoleName };  await Data.UpdateRoleData(); } )"
+               CancelAction="@(() => { CreateRole = false; Data.RoleData = default; } )">
+            <div class="container">
+
+                <h2>Input a Role Name and click on "Ok" to create a Custom Role!</h2>
+
+                <br/>
+
+                <input class="input" type="text" placeholder="Role Name" @bind="NewRoleName" />
+
+            </div>
+        </Modal>
+    }
+
+</ClientDataWrapper>
+
+

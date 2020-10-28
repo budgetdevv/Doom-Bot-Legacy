@@ -1,0 +1,29 @@
+﻿@inject ClientUserData Data
+
+@code {
+    [Parameter]
+
+    public RenderFragment<ClientUserData> ChildContent { get; set; }
+
+    [Parameter]
+
+    public Action<ClientUserData> OnDataReady { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        while (!Data.Ready)
+        {
+            await Task.Delay(1);
+        }
+
+        if (OnDataReady != default)
+        {
+            OnDataReady.Invoke(Data);
+        }
+    }
+}
+
+@if (Data.Ready)
+{
+    @ChildContent(Data)
+}

@@ -1,0 +1,112 @@
+﻿@inject ClientUserData CUD
+
+@using DoomBot.Shared.Perks
+
+@code{
+    private bool Toggled;
+
+    protected override async Task OnInitializedAsync()
+    {
+        while (!CUD.Ready)
+        {
+            await Task.Delay(1);
+        }
+    }
+}
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="">
+            <img src="https://cdn.discordapp.com/attachments/769521085653450763/769562078159044668/KQLogo.png" alt="Kings & Queens Logo">
+        </a>
+        <div class="navbar-burger burger @( (Toggled) ? "is-active" : default )" @onclick="@( () => Toggled = !Toggled )">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <div class="navbar-menu @( (Toggled) ? "is-active" : default )">
+        <div class="navbar-start">
+
+            @if (CUD.BaseData.Username != default)
+            {
+
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Perks
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+
+                        @foreach (var P in CUD.BaseData.Perks)
+                        {
+                            switch (P)
+                            {
+                                default: continue;
+
+                                case Perk.RolePerk:
+                                    {
+                                        <a class="navbar-item" href="/Perks/Role">
+                                            Custom Role
+                                        </a>
+
+                                        break;
+                                    }
+
+                                case Perk.VoiceChannelPerk:
+                                    {
+
+                                        <a class="navbar-item" href="/Perks/Voice">
+                                            Custom Voice Channel
+                                        </a>
+
+                                        break;
+                                    }
+
+                                case Perk.TextChannelPerk:
+                                    {
+                                        <a class="navbar-item" href="/Perks/Text">
+                                            Custom Text Channel
+                                        </a>
+
+                                        break;
+                                    }
+                            }
+                        }
+
+                    </div>
+                </div>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+
+                    <a class="navbar-link">
+
+                        <img src="@CUD.BaseData.AvatarURL" style="border-radius: 9001px;">
+                    </a>
+
+                    <div class="navbar-dropdown">
+
+
+                        <a class="navbar-item" style="color: #808080">
+
+                            <h6>@CUD.BaseData.Username</h6>
+                        </a>
+
+                        <a class="navbar-item">
+                            Profile
+                        </a>
+
+                        <hr class="navbar-divider">
+
+                        <a class="navbar-item">
+                            Logout
+                        </a>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</nav>
