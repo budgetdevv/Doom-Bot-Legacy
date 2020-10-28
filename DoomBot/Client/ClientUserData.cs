@@ -127,6 +127,8 @@ namespace DoomBot.Client
         public async Task RevertRoleData()
         {
             RoleData = await HC.GetAs<RoleData>("Perks/Roles");
+
+            //Console.WriteLine(RoleData.Name ?? "NO ROLE NAME WTF");
         }
 
         public async Task TryLogin(string UserID, string Bearer)

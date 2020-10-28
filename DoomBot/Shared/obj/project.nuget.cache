@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2WdAyRhWNK4ScfrYZKMFynltYedvX3kZJLbbO9ceUruLD5e7gFjALcOydSXJG9As9Dv1N/K6w5fKdoErn9Mg2A==",
+  "dgSpecHash": "kMi1wd6Y95YTw3Qluw/tP6EwAlcUHy4xT1RZpZsp3F8EWNfGvUY/hhon0OnSLQk9Cn9zgEybz9iLdS8OqNVutQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0-rc.2.20475.5\\microsoft.netcore.platforms.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0-rc.2.20475.5\\microsoft.win32.systemevents.5.0.0-rc.2.20475.5.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\5.0.0-rc.2.20475.5\\system.drawing.common.5.0.0-rc.2.20475.5.nupkg.sha512"
   ],
   "logs": []

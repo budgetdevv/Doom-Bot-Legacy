@@ -1,4 +1,5 @@
 ﻿using DoomBot.Server.Controllers.Attributes;
+using DoomBot.Server.Managers;
 using DoomBot.Server.Modules;
 using DoomBot.Shared;
 using DoomBot.Shared.Perks.Role;

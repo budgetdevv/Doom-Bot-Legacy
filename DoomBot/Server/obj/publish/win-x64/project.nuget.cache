@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SJBShRPRozXHMiuHjDQzQwWIM1oIXz1n3BiIOkb7u1BJCXgEj4O1hQUFMgJ0I4ykCCxojCurPT32CJW4LWXSAA==",
+  "dgSpecHash": "atPY9TZFQ6Ht9SPDascE7qi8M4Zoc4qcnbI0xH55FPAB6zaRLIEfebwl2rFVAAIrmUhuWPBNToSjVzFyxkSFxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Server\\DoomBot.Server.csproj",
   "expectedPackageFiles": [
@@ -20,10 +20,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.web\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.web.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.webassembly.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\3.2.1\\microsoft.aspnetcore.components.webassembly.server.3.2.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.jsonpatch.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.metadata.5.0.0-rc.2.20475.17.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.0-rc.2.20475.17.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.abstractions.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.binder.5.0.0-rc.2.20475.5.nupkg.sha512",
@@ -50,8 +47,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\mongodb.libmongocrypt\\1.0.0\\mongodb.libmongocrypt.1.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mongodb.serializer.valuetuple\\1.0.0\\mongodb.serializer.valuetuple.1.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.3.0\\runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512",

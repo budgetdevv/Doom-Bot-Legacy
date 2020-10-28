@@ -68,8 +68,6 @@ namespace DoomBot.Server.Modules
                 return default;
             }
 
-            Console.WriteLine("Eli");
-
             long UserID = (long)User.Id;
 
             var PerksRole = await GetDataUnwrapped(UserID);
@@ -131,7 +129,7 @@ namespace DoomBot.Server.Modules
 
             //Data.Color = (Role.Color.R, Role.Color.G, Role.Color.B);
 
-            Data.Color = Role.Color;
+            Data.Color = Role.Color.RawValue;
 
             Data.Hoisted = Role.IsHoisted;
 
@@ -185,7 +183,7 @@ namespace DoomBot.Server.Modules
 
                         if (CanCustomizeRole(User))
                         {
-                            await Role.ModifyAsync(x => { x.Name = RoleData.Name; x.Color = new Color(RoleData.Color.R, RoleData.Color.G, RoleData.Color.B); x.Hoist = RoleData.Hoisted; });
+                            await Role.ModifyAsync(x => { x.Name = RoleData.Name; x.Color = new Color(RoleData.Color); x.Hoist = RoleData.Hoisted; });
                         }
                 }
 

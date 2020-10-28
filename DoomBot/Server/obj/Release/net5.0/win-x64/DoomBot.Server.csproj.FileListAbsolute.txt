@@ -173,15 +173,12 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\wi
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\IdGen.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Microsoft.AspNetCore.Components.WebAssembly.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Microsoft.AspNetCore.Components.WebAssembly.Server.dll
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\MongoDB.Bson.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\MongoDB.Driver.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\MongoDB.Driver.Core.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\MongoDB.Libmongocrypt.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Newtonsoft.Json.dll
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\Newtonsoft.Json.Bson.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\SharpCompress.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\System.Interactive.Async.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Server\bin\Release\net5.0\win-x64\System.Linq.Async.dll

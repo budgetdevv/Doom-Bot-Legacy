@@ -30,7 +30,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwr
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.JSInterop.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Newtonsoft.Json.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\System.Drawing.Common.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\System.IO.Pipelines.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.CSharp.dll.gz
@@ -230,7 +229,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwr
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.JSInterop.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Newtonsoft.Json.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\System.Drawing.Common.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\System.IO.Pipelines.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Debug\net5.0\wwwroot\_framework\Microsoft.CSharp.dll
@@ -463,7 +461,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\buil
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\w3HCUVTZ.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\RzahPcIO.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\thJZFAJU.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\dv91wFDy.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\CRcLnDcu.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\HIUj26RW.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Debug\net5.0\build-gz\julHHuKy.gz

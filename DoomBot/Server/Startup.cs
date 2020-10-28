@@ -42,7 +42,11 @@ namespace DoomBot.Server
 
             Services.AddControllersWithViews().AddJsonOptions(x =>
              {
-                 x.JsonSerializerOptions.Converters.Add(new ValueTupleFactory());
+                 var Opt = x.JsonSerializerOptions;
+
+                 Opt.Converters.Add(new ValueTupleFactory());
+
+                 Opt.PropertyNamingPolicy = null;
              });
 
             Services.AddRazorPages();
@@ -52,7 +56,7 @@ namespace DoomBot.Server
             Services.AddCors(o => o.AddPolicy("Kys", builder =>
             {
                 builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
+                       .AllowAnyMethod()    
                        .AllowAnyHeader();
             }));
 

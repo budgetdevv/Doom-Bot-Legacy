@@ -84,7 +84,7 @@
                                     {
                                         case "Overview":
                                             {
-                                                <span class="tag is-medium" style="background-color: @Data.RoleData.ColorString">
+                                                <span class="tag is-medium" style="background-color: @Data.RoleData.ColorHTML">
                                                     @Data.RoleData.Name
                                                 </span>
 
@@ -110,7 +110,7 @@
                                         case "Color":
                                             {
                                                 {
-                                                    <input type="color" id="colorpicker" @bind="Data.RoleData.ColorString">
+                                                    <input type="color"@bind="Data.RoleData.ColorHTML">
 
                                                     break;
                                                 }

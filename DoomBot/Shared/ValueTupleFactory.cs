@@ -131,7 +131,7 @@ namespace DoomBot.Shared
                 else if (reader.ValueTextEquals("Item2") && reader.Read())
                 {
                     result.Item2 = JsonSerializer.Deserialize<T2>(ref reader, options);
-                }
+                }   
                 else if (reader.ValueTextEquals("Item3") && reader.Read())
                 {
                     result.Item3 = JsonSerializer.Deserialize<T3>(ref reader, options);

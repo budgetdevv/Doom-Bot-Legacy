@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fnLYEwI/xAZ9TdRz3h5N4eP6THpjozV5HS2ttS9Rl2MSzXqLpKI8WPPKQ23G72aVDCezwyf5t1x8gtwrBnPhug==",
+  "dgSpecHash": "NQbQRH+yPCgmVISj7zddu3Xq3B8q48HJ8ZWnyZS/qmUdQvzJ2qJP5ANd2Tjs24qOYliZZxkD6IYaSwoVzYRaOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Client\\DoomBot.Client.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,6 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.forms.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.web\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.web.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.webassembly.5.0.0-rc.2.20475.17.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.webassembly.devserver.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.metadata.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.abstractions.5.0.0-rc.2.20475.5.nupkg.sha512",
@@ -31,7 +30,6 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.0-rc.2.20475.17\\microsoft.jsinterop.webassembly.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0-rc.2.20475.5\\microsoft.netcore.platforms.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0-rc.2.20475.5\\microsoft.win32.systemevents.5.0.0-rc.2.20475.5.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\5.0.0-rc.2.20475.5\\system.drawing.common.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.io.pipelines\\5.0.0-rc.2.20475.5\\system.io.pipelines.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\5.0.0-rc.2.20475.5\\system.text.json.5.0.0-rc.2.20475.5.nupkg.sha512",

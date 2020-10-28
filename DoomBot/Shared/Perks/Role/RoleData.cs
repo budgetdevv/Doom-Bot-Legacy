@@ -1,9 +1,8 @@
-﻿using Newtonsoft.Json;
-using Recycler;
+﻿using Recycler;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace DoomBot.Shared.Perks.Role
 {
@@ -15,34 +14,18 @@ namespace DoomBot.Shared.Perks.Role
 
         public bool Hoisted { get; set; }
 
-        public Color Color { get; set; }
+        public uint Color { get; set; }
 
         [JsonIgnore]
-        public string ColorString
+        public string ColorHTML
         {
-            get
-            {
-                var SB = new StringBuilder("#");
-
-                SB.Append(Color.R.ToString("X2"));
-
-                SB.Append(Color.G.ToString("X2"));
-
-                SB.Append(Color.B.ToString("X2"));
-
-                return SB.ToString();
-            }
+            get => $"#{Color.ToString("X6")}";
 
             set
             {
-                try
+                if (uint.TryParse(value.AsSpan(1), System.Globalization.NumberStyles.HexNumber, default, out uint Color))
                 {
-                    Color = ColorTranslator.FromHtml($"{value}");
-                }
-
-                catch
-                {
-
+                    this.Color = Color;
                 }
             }
         }
