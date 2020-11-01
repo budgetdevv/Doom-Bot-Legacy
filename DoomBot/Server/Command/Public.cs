@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
@@ -64,6 +64,12 @@ namespace DoomBot.Server.Command
             }
 
             _ = ReplyAsync($":moneybag: | {User.Mention}'s balance is ${(await IM.GetOrCreateInvUnwrapped((long)User.Id)).Cash}");
+        }
+        
+        [Command("lbcash", RunMode = RunMode.Async)]
+        public async Task LBCash()
+        {
+            
         }
     }
 }

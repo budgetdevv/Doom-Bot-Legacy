@@ -4,20 +4,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Discord.Commands;
 
 namespace DoomBot.Server.Modules
 {
-    public abstract class DoomModuleBase<T>
+    public class DoomModuleBase<T>
     {
-        public class MongoDataWrapper : IDisposable
+        private class ModuleBasePoolComparer : IEqualityComparer<(BsonValue ID, T Data)>
+        {
+            public bool Equals((BsonValue ID, T Data) X, (BsonValue ID, T Data) Y)
+            {
+                return X.ID == Y.ID;
+            }
+
+            public int GetHashCode((BsonValue ID, T Data) Obj)
+            {
+                return Obj.ID.GetHashCode();
+            }
+        }
+
+        public sealed class MongoDataWrapper : IDisposable
         {
             //Static
 
-            private static Queue<MongoDataWrapper> Recycled = new Queue<MongoDataWrapper>();
+            private static readonly Queue<MongoDataWrapper> Recycled = new Queue<MongoDataWrapper>();
 
             public static MongoDataWrapper Create(T Data, Action<MongoDataWrapper, bool> DataUpdater)
             {
-                if (Recycled.TryDequeue(out MongoDataWrapper W))
+                if (Recycled.TryDequeue(out var W))
                 {
                     W.Data = Data;
 
@@ -54,7 +68,7 @@ namespace DoomBot.Server.Modules
                 this.DataUpdater = DataUpdater;
             }
 
-            public void Update(bool Immediate = false)
+            private void Update(bool Immediate = false)
             {
                 DataUpdater.Invoke(this, false);
             }
@@ -67,7 +81,7 @@ namespace DoomBot.Server.Modules
             }
         }
 
-        private readonly Dictionary<BsonValue, T> Pool;
+        private readonly HashSet<(BsonValue ID, T Data)> Pool;
 
         private readonly HashSet<(BsonValue ID, T Data)> UpdateQueue;
 
@@ -75,54 +89,51 @@ namespace DoomBot.Server.Modules
 
         private readonly string CollectionType;
 
-        protected Action<Dictionary<BsonValue, T>> CustomDataPoolLoop;
+        //Allows customization of Pool Purge behaviour
+        
+        private Action<HashSet<(BsonValue ID, T Data)>> CustomDataPoolLoop;
 
-        public DoomModuleBase(MDB _DB, string _CollectionType)
+        protected DoomModuleBase(MDB _DB, string _CollectionType)
         {
             DB = _DB;
 
-            Pool = new Dictionary<BsonValue, T>();
+            Pool = new HashSet<(BsonValue ID, T Data)>(new ModuleBasePoolComparer());
 
             UpdateQueue = new HashSet<(BsonValue ID, T Data)>();
 
             CollectionType = _CollectionType;
 
-            _ = Task.Run(async () =>
-            {
-                //This never ends
-
-                _ = Loop();
-            });
+            Task.Run(Loop);
         }
 
         protected async Task<MongoDataWrapper> GetData(BsonValue ID)
         {
-            if (Pool.TryGetValue(ID, out T Data))
+            if (Pool.TryGetValue((ID, default), out var Data))
             {
-                return WrapData(ID, Data);
+                return WrapData(ID, Data.Data);
             }
 
-            Data = await DB.Get<T>(CollectionType, ID);
+            var DataFromDB = await DB.Get<T>(CollectionType, ID);
 
-            if (Data == null)
+            if (DataFromDB == null)
             {
                 return default;
             }
 
             //Add it to the pool so subsequent access can be faster
 
-            Pool.TryAdd(ID, Data);
+            Pool.Add((ID, DataFromDB));
 
-            return WrapData(ID, Data);
+            return WrapData(ID, DataFromDB);
         }
 
 
 
         protected void DeleteData(BsonValue ID)
         {
-            Pool.Remove(ID);
+            Pool.Remove((ID, default));
 
-            _ = Task.Run(async () =>
+            Task.Run(async () =>
             {
                 await DB.Delete<T>(CollectionType, ID);
             });
@@ -152,15 +163,12 @@ namespace DoomBot.Server.Modules
                 return;
             }
 
-            await Task.Run(async () =>
-            {
-                await DB.Upsert(CollectionType, ID, Data);
-            });
+            await Task.Run( async () => await DB.Upsert(CollectionType, ID, Data));
         }
 
         protected async Task<MongoDataWrapper> CreateData(BsonValue ID, T NewData)
         {
-            Pool.TryAdd(ID, NewData);
+            Pool.Add((ID, NewData));
 
             await UpdateData(ID, NewData, true);
 
@@ -173,28 +181,28 @@ namespace DoomBot.Server.Modules
 
         protected async Task<T> GetDataUnwrapped(BsonValue ID)
         {
-            if (Pool.TryGetValue(ID, out T Data))
+            if (Pool.TryGetValue((ID, default), out var Data))
             {
-                return Data;
+                return Data.Data;
             }
 
-            Data = await DB.Get<T>(CollectionType, ID);
+            var DataFromDB = await DB.Get<T>(CollectionType, ID);
 
-            if (Data == null)
+            if (DataFromDB == null)
             {
                 return default;
             }
 
             //Add it to the pool so subsequent access can be faster
 
-            Pool.TryAdd(ID, Data);
+            Pool.Add((ID, DataFromDB));
 
-            return Data;
+            return DataFromDB;
         }
 
         protected async Task<T> CreateDataUnwrapped(BsonValue ID, T NewData)
         {
-            Pool.TryAdd(ID, NewData);
+            Pool.Add((ID, NewData));
 
             await UpdateData(ID, NewData, true);
 
@@ -216,11 +224,8 @@ namespace DoomBot.Server.Modules
 
                 //Trim Pool if its too huge...
 
-                if (CustomDataPoolLoop != default)
-                {
-                    CustomDataPoolLoop.Invoke(Pool);
-                }
-
+                CustomDataPoolLoop?.Invoke(Pool);
+                
                 await Task.Delay(10000);
             }
         }

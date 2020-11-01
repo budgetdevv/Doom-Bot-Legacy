@@ -4,10 +4,8 @@ using DoomBot.Server.Modules;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 public class CooldownComparer : IEqualityComparer<(ulong UserID, DateTime Completion)>
@@ -42,7 +40,7 @@ public class EconManager
 
     private RolePerkModule RPM;
 
-    private List<(Inventory Inv, SocketRole Role)> RoleCompiler;
+    private List<ReorderRoleProperties> RoleCompiler;
 
     private HashSet<(ulong UserID, DateTime Completion)> Cooldown;
 
@@ -60,7 +58,7 @@ public class EconManager
 
         this.RPM = RPM;
 
-        RoleCompiler = new List<(Inventory Inv, SocketRole Role)>();
+        RoleCompiler = new List<ReorderRoleProperties>();
 
         Cooldown = new HashSet<(ulong UserID, DateTime Completion)>(new CooldownComparer());
 
@@ -95,6 +93,10 @@ public class EconManager
 
     private async Task Loop()
     {
+        //Give time for bot to startup
+
+        await Task.Delay(1000);
+
         while (true)
         {
             await SortRole();
@@ -118,47 +120,50 @@ public class EconManager
 
         var OnlineUsers = Guild.Users;
 
-        foreach (var OU in OnlineUsers)
-        {
-            if (OU.Status == UserStatus.Offline)
-            {
-                continue;
-            }
-
-            var Inv = await IM.TryGetInvUnwrapped((long)OU.Id);
-
-            if (Inv == default)
-            {
-                continue;
-            }
-
-            var RP = await RPM.TryGetRoleUnwrapped(OU);
-
-            if (RP == default)
-            {
-                continue;
-            }
-
-            var Role = RPM.TryGetSocketRole(OU, RP.RoleID);
-
-            if (Role == default || !Role.IsHoisted)
-            {
-                continue;
-            }
-
-            RoleCompiler.Add((Inv, Role));
-        }
-
-        var Sorted = RoleCompiler.OrderBy(x => x.Inv.Boosts).ThenBy(x => x.Inv.Cash);
-
         int Pos = PHRole.Position;
 
-        foreach (var S in Sorted)
+        async IAsyncEnumerable<(Inventory Inv, PerkRole Role)> OnlineInvRole()
         {
-            Pos++;
+            foreach (var OU in OnlineUsers)
+            {
+                if (OU.Status == UserStatus.Offline)
+                {
+                    continue;
+                }
 
-            await S.Role.ModifyAsync(x => x.Position = Pos);
+                var Inv = await IM.TryGetInvUnwrapped((long)OU.Id);
+
+                if (Inv == default)
+                {
+                    continue;
+                }
+
+                var RP = await RPM.TryGetRoleUnwrapped(OU);
+
+                if (RP == default)
+                {
+                    continue;
+                }
+
+                yield return (Inv, RP);
+            }
         }
+
+        async IAsyncEnumerable<ReorderRoleProperties> RoleOrderData()
+        {
+            yield return new ReorderRoleProperties(PHRole.Id, Pos);
+
+            await foreach (var X in OnlineInvRole().OrderByDescending(x => x.Inv.Boosts).ThenByDescending(x => x.Inv.Cash))
+            {
+                Pos--;
+
+                yield return new ReorderRoleProperties(X.Role.RoleID, Pos);
+            }
+        }
+
+        await Guild.ReorderRolesAsync(RoleOrderData().ToEnumerable());
+
+        Console.WriteLine("Role Re-order complete!");
     }
 
     public async Task OnText(SocketUserMessage Msg)

@@ -32,7 +32,7 @@ namespace DoomBot.Server
 
         public IConfiguration Configuration { get; }
 
-        public IServiceProvider Provider { get; private set; }
+        public static IServiceProvider ServicesProvider { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -122,15 +122,15 @@ namespace DoomBot.Server
                 endpoints.MapFallbackToFile("index.html");
             });
 
-            Provider = app.ApplicationServices;
+            ServicesProvider = app.ApplicationServices;
 
-            var Client = Provider.GetService<DiscordSocketClient>();
+            var Client = ServicesProvider.GetService<DiscordSocketClient>();
 
             Client.Log += LogAsync;
 
-            Provider.GetRequiredService<CommandService>().Log += LogAsync;
+            ServicesProvider.GetRequiredService<CommandService>().Log += LogAsync;
 
-            _ = StartDiscord(Client, Provider.GetService<DiscordRestClient>());
+            _ = StartDiscord(Client, ServicesProvider.GetService<DiscordRestClient>());
         }
 
         private async Task StartDiscord(DiscordSocketClient Client, DiscordRestClient RClient)
@@ -146,7 +146,7 @@ namespace DoomBot.Server
             await RClient.LoginAsync(TokenType.Bot, "NzY5MTk5NjUzNjY0OTgwOTky.X5LjAA.yHBbHuu_puEUz3a1s9yfLc7I2Rc");
 
             // Here we initialize the logic required to register our commands.
-            await Provider.GetRequiredService<CommandHandlingService>().InitializeAsync();
+            await ServicesProvider.GetRequiredService<CommandHandlingService>().InitializeAsync();
         }
 
         private Task LogAsync(LogMessage Log)

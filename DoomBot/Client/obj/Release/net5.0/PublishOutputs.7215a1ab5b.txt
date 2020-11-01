@@ -1,10 +1,6 @@
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\favicon.ico
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\index.html
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\dotnet.wasm
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt.dat
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_CJK.dat
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_EFIGS.dat
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_no_CJK.dat
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\dotnet.5.0.0-rc.2.20475.5.js
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\Blazored.LocalStorage.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
@@ -56,10 +52,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\favicon.ico.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\index.html.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\dotnet.wasm.br
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt.dat.br
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_CJK.dat.br
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_EFIGS.dat.br
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_no_CJK.dat.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\dotnet.5.0.0-rc.2.20475.5.js.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\Blazored.LocalStorage.dll.br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\Microsoft.AspNetCore.Components.dll.br
@@ -110,10 +102,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\br
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\favicon.ico.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\index.html.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\dotnet.wasm.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt.dat.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_CJK.dat.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_EFIGS.dat.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\icudt_no_CJK.dat.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\dotnet.5.0.0-rc.2.20475.5.js.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\Blazored.LocalStorage.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\browser-wasm\PubTmp\Out\wwwroot\_framework\Microsoft.AspNetCore.Components.dll.gz

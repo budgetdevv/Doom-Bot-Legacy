@@ -88,5 +88,25 @@ namespace DoomBot.Server.Command
 
             _ = ReplyAsync($":white_check_mark: | {TC.Mention} is no longer a Spawn Channel!");
         }
+        
+        [Command("rbench", RunMode = RunMode.Async)]
+        public async Task ReactBench()
+        {
+            ReactionQueue.Instance.Queue(Context.Message, "🧐");
+            ReactionQueue.Instance.Queue(Context.Message, "😎");
+            ReactionQueue.Instance.Queue(Context.Message, "🤔");
+            ReactionQueue.Instance.Queue(Context.Message, "😳");
+            ReactionQueue.Instance.Queue(Context.Message, "👍🏻");
+        }
+
+        [Command("RTbench", RunMode = RunMode.Async)]
+        public async Task RTBench()
+        {
+            _ = Task.Run(() => ReactionQueue.Instance.Queue(Context.Message, "🧐"));
+            _ = Task.Run(() => ReactionQueue.Instance.Queue(Context.Message, "😎"));
+            _ = Task.Run(() => ReactionQueue.Instance.Queue(Context.Message, "🤔"));
+            _ = Task.Run(() => ReactionQueue.Instance.Queue(Context.Message, "😳"));
+            _ = Task.Run(() => ReactionQueue.Instance.Queue(Context.Message, "👍🏻"));
+        }
     }
 }

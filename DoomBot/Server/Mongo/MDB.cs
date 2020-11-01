@@ -5,7 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;   
+using System.Threading.Tasks;
+using MongoDB.Driver.Core.Operations;
 
 namespace DoomBot.Server.MongoDB
 {
@@ -51,12 +52,7 @@ namespace DoomBot.Server.MongoDB
 
             var Data = await (await Collection.FindAsync(Builders<T>.Filter.Eq("_id", ID))).FirstOrDefaultAsync();
 
-            if (Data != null)
-            {
-                return Data;
-            }
-
-            return default;
+            return Data ?? default;
         }
 
         public long CountCollectionEst<T>(string Type)
@@ -64,6 +60,11 @@ namespace DoomBot.Server.MongoDB
             var Collection = DB.GetCollection<T>(Type);
 
             return Collection.EstimatedDocumentCount(); 
+        }
+        
+        public async Task<List<T>> GetCollection<T>(string Type, HashSet<(BsonValue ID, T Data)> Pool)
+        {
+            
         }
     }
 }

@@ -3,7 +3,7 @@
   "config": [ ],
   "debugBuild": true,
   "entryAssembly": "DoomBot.Client",
-  "icuDataMode": 0,
+  "icuDataMode": 2,
   "linkerEnabled": false,
   "resources": {
     "assembly": {
@@ -209,10 +209,6 @@
     },
     "runtime": {
       "dotnet.wasm": "sha256-sM00FtqUHIlrUdb02MY\/qfdHC8Wj3ZQzQbgAHOGI\/QM=",
-      "icudt.dat": "sha256-m7NyeXyxM+CL04jr9ui1Z6pVfMWwhHusuz5qNZWpAwA=",
-      "icudt_CJK.dat": "sha256-91bygK5voY9lG5wxP0\/uj7uH5xljF9u7iWnSldT1Z\/g=",
-      "icudt_EFIGS.dat": "sha256-DPfeOLph83b2rdx40cKxIBcfVZ8abTWAFq+RBQMxGw0=",
-      "icudt_no_CJK.dat": "sha256-oM7Z6aN9jHmCYqDMCBwFgFAYAGgsH1jLC\/Z6DYeVmmk=",
       "dotnet.5.0.0-rc.2.20475.5.js": "sha256-bHu90HVES4SKyUFhMpzoBXzOukU4TR6+P2ZsSqV5b6Q="
     },
     "satelliteResources": null

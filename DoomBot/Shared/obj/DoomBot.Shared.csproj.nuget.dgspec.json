@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj",
         "projectName": "DoomBot.Shared",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Shared\\DoomBot.Shared.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,11 +62,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100-rc.2.20479.15\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "browser-wasm": {
-          "#import": []
         }
       }
     }

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Administrator\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_DoomBot.-1345623566.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Administrator\Desktop\DoomBot" t="IncludeFlat">
+      <e p="DoomBot\Client" t="IncludeRecursive">
+        <e p="_Imports.razor" t="Include" />
+        <e p="App.razor" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="ClientUserData.cs" t="Include" />
+        <e p="DoomBot.Client.csproj" t="IncludeRecursive" />
+        <e p="LinkerConfig.xml" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="DoomBot.Client.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="Bearer.razor" t="Include" />
+          <e p="Index.razor" t="Include" />
+          <e p="RolePerk.razor" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Shared" t="Include">
+          <e p="ClientDataWrapper.razor" t="Include" />
+          <e p="HeroMed.razor" t="Include" />
+          <e p="MainLayout.razor" t="Include" />
+          <e p="Modal.razor" t="Include" />
+          <e p="NavBar.razor" t="Include" />
+        </e>
+        <e p="wwwroot" t="Include">
+          <e p="favicon.ico" t="Include" />
+          <e p="index.html" t="Include" />
+        </e>
+      </e>
+      <e p="DoomBot\Server" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Command" t="Include">
+          <e p="Attributes" t="Include" />
+          <e p="CommandHandlingService.cs" t="Include" />
+          <e p="DMPublic.cs" t="Include" />
+          <e p="GuildAdmin.cs" t="Include" />
+          <e p="GuildPublic.cs" t="Include" />
+          <e p="Public.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="Attributes" t="Include">
+            <e p="AccessUserAttribute.cs" t="Include" />
+            <e p="RequireUserAccessAttribute.cs" t="Include" />
+            <e p="UserAccessor.cs" t="Include" />
+          </e>
+          <e p="Auth" t="Include">
+            <e p="AuthController.cs" t="Include" />
+          </e>
+          <e p="Guild" t="Include">
+            <e p="GuildController.cs" t="Include" />
+          </e>
+          <e p="Perks" t="Include">
+            <e p="RolesController.cs" t="Include" />
+          </e>
+          <e p="Users" t="Include">
+            <e p="UsersController.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DoomBot.Server.csproj" t="IncludeRecursive" />
+        <e p="EconConf.json" t="Include" />
+        <e p="EM" t="Include">
+          <e p="EmbedMenu.cs" t="Include" />
+          <e p="EMManager.cs" t="Include" />
+          <e p="ReactionQueue.cs" t="Include" />
+        </e>
+        <e p="InventoryAccessor.cs" t="Include" />
+        <e p="Managers" t="Include">
+          <e p="AuthManager.cs" t="Include" />
+          <e p="AuthUser.cs" t="Include" />
+          <e p="EconManager.cs" t="Include" />
+          <e p="PartnerManager.cs" t="Include" />
+          <e p="PerksManager.cs" t="Include" />
+        </e>
+        <e p="Modules" t="Include">
+          <e p="DiscordAccessor.cs" t="Include" />
+          <e p="DoomModuleBase.cs" t="Include" />
+          <e p="Inventory" t="Include">
+            <e p="Inventory.cs" t="Include" />
+            <e p="InventoryModule.cs" t="Include" />
+            <e p="Perks" t="Include">
+              <e p="PerkRole.cs" t="Include" />
+              <e p="RolePerkModule.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Mongo" t="Include">
+          <e p="MDB.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="DoomBot.Server.AssemblyInfo.cs" t="Include" />
+              <e p="DoomBot.Server.RazorAssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Pages" t="Include">
+          <e p="Error.cshtml" t="Include" />
+          <e p="Error.cshtml.cs" t="Include" />
+          <e p="Shared" t="Include">
+            <e p="_Layout.cshtml" t="Include" />
+          </e>
+        </e>
+        <e p="PerksConf.json" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+          <e p="PublishProfiles" t="Include">
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Recycler" t="Include">
+          <e p="Recycler.dll" t="Include" />
+        </e>
+        <e p="Snowflake" t="Include">
+          <e p="SnowflakeEngine.cs" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="DoomBot\Shared" t="IncludeRecursive">
+        <e p="Android" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="browser" t="Include" />
+        <e p="DoomBot.Shared.csproj" t="IncludeRecursive" />
+        <e p="HttpHelper.cs" t="Include" />
+        <e p="iOS" t="Include" />
+        <e p="Linux" t="Include" />
+        <e p="macOS" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net5.0" t="Include">
+              <e p="DoomBot.Shared.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Perks" t="Include">
+          <e p="PerkEnum.cs" t="Include" />
+          <e p="Role" t="Include">
+            <e p="RoleData.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Recycler" t="Include">
+          <e p="Recycler.dll" t="Include" />
+        </e>
+        <e p="ValueTupleFactory.cs" t="Include" />
+        <e p="Windows" t="Include" />
+      </e>
+      <e p="DoomBot.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

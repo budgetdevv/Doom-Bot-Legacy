@@ -8,6 +8,7 @@
 		<BlazorWebAssemblyEnableLinking>true</BlazorWebAssemblyEnableLinking>
 		<BlazorEnableTimeZoneSupport>false</BlazorEnableTimeZoneSupport>
 		<BlazorWebAssemblyPreserveCollationData>false</BlazorWebAssemblyPreserveCollationData>
+		<InvariantGlobalization>true</InvariantGlobalization>
 	</PropertyGroup>
 	
 	<!--<ItemGroup>

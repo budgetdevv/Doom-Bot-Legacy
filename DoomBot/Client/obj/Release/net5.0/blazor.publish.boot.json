@@ -3,7 +3,7 @@
   "config": [ ],
   "debugBuild": false,
   "entryAssembly": "DoomBot.Client",
-  "icuDataMode": 0,
+  "icuDataMode": 2,
   "linkerEnabled": true,
   "resources": {
     "assembly": {
@@ -26,13 +26,12 @@
       "System.Drawing.Common.dll": "sha256-JhEQ\/O38J\/z2Nz6NfWpPvulVwD7Aiwt+259CpWdx\/tg=",
       "System.IO.Pipelines.dll": "sha256-+ADP8S4Rwb9fxn+kdR4cWYmvPtc92ZGPMIIGN5AiBsQ=",
       "DoomBot.Shared.dll": "sha256-juhmYo4SDtvn942loYajlA8wWn8huYcWkDQHjQDJKwM=",
-      "Recycler.dll": "sha256-mzwwh1MA7B\/h2pTD\/\/MhPOeOmGC8VU8qyv5eWNN5f6Y=",
       "DoomBot.Client.dll": "sha256-wSU00sbRDJfyjHJWvsIclUG3Sew46yETq2lvdK4\/4L4=",
       "System.Collections.Concurrent.dll": "sha256-evYUb+IshU+tBlwS5I0iOQCi7GGESPrvccY3eZJt\/sY=",
       "System.Collections.Immutable.dll": "sha256-DB9Pu3PFlWXxLHAD4Fwtt5kfH+Yl7lpTTm7DkZZl8I8=",
       "System.Collections.NonGeneric.dll": "sha256-XZMhWXeRQgvdS1jpqP7XFDVC1XVDo\/dDLIk6WRsnGXg=",
       "System.Collections.Specialized.dll": "sha256-vnMEYT3focVAGqfpIb8JeSZKwwm0AUJSWq+0Su4VHfA=",
-      "System.Collections.dll": "sha256-Fzn12PBAYyxzZBsB\/\/2DAAuiFJQXjVF\/XtOHbrXhpSc=",
+      "System.Collections.dll": "sha256-CTHSK28ZPLrO5t4Y8FTAljnKWIWZbu4fYvBkBnHNQqY=",
       "System.ComponentModel.Primitives.dll": "sha256-uPjRbF7XvXOJzqEnJMjXpxUBckSbXBOQDpfeR5ie7pA=",
       "System.ComponentModel.TypeConverter.dll": "sha256-hC6+bCIQRj1hdfdM2O4ZPUhA92pVqQ23u\/5BCQdFuTE=",
       "System.ComponentModel.dll": "sha256-OoI+lmMdjBWtz7Qi0o6CWBfbhpVBl7F6tg+AVJiHDiU=",
@@ -50,16 +49,12 @@
       "System.Text.Encodings.Web.dll": "sha256-5S+W3kSk+0u\/+RQQqCU8AokWCOmN4XjpDM7+dS5thPM=",
       "System.Text.Json.dll": "sha256-oxaLJPUxWH+klVqnkQeIxkVP8zKzhF8nqUaKq1w0aUc=",
       "System.Text.RegularExpressions.dll": "sha256-PPrGv2+uY0fyOg5MFQdd8Iv3OGXIrQOYz53x6sAbv7Q=",
-      "System.Private.CoreLib.dll": "sha256-fQ4GOJ4rQgASUVmPM24LWmeq1WahBYkquMUQX\/ny7go="
+      "System.Private.CoreLib.dll": "sha256-xqDhYOkFagw\/bnuYw\/3R0osCX76QLXZSmG3OwJ3Jyao="
     },
     "lazyAssembly": null,
     "pdb": null,
     "runtime": {
       "dotnet.wasm": "sha256-sM00FtqUHIlrUdb02MY\/qfdHC8Wj3ZQzQbgAHOGI\/QM=",
-      "icudt.dat": "sha256-m7NyeXyxM+CL04jr9ui1Z6pVfMWwhHusuz5qNZWpAwA=",
-      "icudt_CJK.dat": "sha256-91bygK5voY9lG5wxP0\/uj7uH5xljF9u7iWnSldT1Z\/g=",
-      "icudt_EFIGS.dat": "sha256-DPfeOLph83b2rdx40cKxIBcfVZ8abTWAFq+RBQMxGw0=",
-      "icudt_no_CJK.dat": "sha256-oM7Z6aN9jHmCYqDMCBwFgFAYAGgsH1jLC\/Z6DYeVmmk=",
       "dotnet.5.0.0-rc.2.20475.5.js": "sha256-bHu90HVES4SKyUFhMpzoBXzOukU4TR6+P2ZsSqV5b6Q="
     },
     "satelliteResources": null

@@ -198,10 +198,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\ww
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\netstandard.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\System.Private.CoreLib.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\dotnet.wasm.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt.dat.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt_CJK.dat.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt_EFIGS.dat.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt_no_CJK.dat.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\dotnet.5.0.0-rc.2.20475.5.js.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\DoomBot.Shared.dll.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\Recycler.dll.gz
@@ -397,10 +393,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\ww
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\netstandard.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\System.Private.CoreLib.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\dotnet.wasm
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt.dat
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt_CJK.dat
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt_EFIGS.dat
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\icudt_no_CJK.dat
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\dotnet.5.0.0-rc.2.20475.5.js
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\DoomBot.Shared.dll
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\bin\Release\net5.0\wwwroot\_framework\Recycler.dll
@@ -629,10 +621,6 @@ C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\bu
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\oiuTRcaO.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\EphOAe0X.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\A59wlSa6.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\EXM2wdkY.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\5d29HD1a.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\E+AnmfZG.gz
-C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\dBP3lM1q.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\JMx6ktHp.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\CHZCOoyt.gz
 C:\Users\Administrator\Desktop\Code\DoomBot\DoomBot\Client\obj\Release\net5.0\build-gz\Fy21NcdQ.gz
