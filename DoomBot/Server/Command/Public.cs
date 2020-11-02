@@ -90,7 +90,7 @@ namespace DoomBot.Server.Command
                 {
                     var Inv = Data.Data;
                     
-                    EM.AddElement("🙏🏻", Context.Guild.GetUser((ulong)Inv.ID)?.ToString(), $"${Inv.Cash}", default);
+                    EM.AddElement(default, Context.Client.GetUser((ulong)Inv.ID)?.ToString() ?? "User left Guild!", $"${Inv.Cash}", default);
                 }
                 
                 return true;

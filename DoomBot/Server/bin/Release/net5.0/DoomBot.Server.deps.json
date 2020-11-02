@@ -25,12 +25,13 @@
     ".NETCoreApp,Version=v5.0": {
       "DoomBot.Server/1.0.0": {
         "dependencies": {
-          "Discord.Net": "2.3.0-dev-20201014.8",
+          "Discord.Net": "2.3.0-dev-20200710.2",
           "DoomBot.Shared": "1.0.0",
           "IdGen": "3.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "3.2.1",
           "MongoDB.Driver": "2.11.3",
           "MongoDB.Serializer.ValueTuple": "1.0.0",
+          "Newtonsoft.Json": "12.0.3",
           "Recycler": "1.0.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -323,18 +324,18 @@
           "DoomBot.Server.dll": {}
         }
       },
-      "Discord.Net/2.3.0-dev-20201014.8": {
+      "Discord.Net/2.3.0-dev-20200710.2": {
         "dependencies": {
-          "Discord.Net.Commands": "2.3.0-dev-20201014.8",
-          "Discord.Net.Core": "2.3.0-dev-20201014.8",
-          "Discord.Net.Rest": "2.3.0-dev-20201014.8",
-          "Discord.Net.WebSocket": "2.3.0-dev-20201014.8",
-          "Discord.Net.Webhook": "2.3.0-dev-20201014.8"
+          "Discord.Net.Commands": "2.3.0-dev-20200710.2",
+          "Discord.Net.Core": "2.3.0-dev-20200710.2",
+          "Discord.Net.Rest": "2.3.0-dev-20200710.2",
+          "Discord.Net.WebSocket": "2.3.0-dev-20200710.2",
+          "Discord.Net.Webhook": "2.3.0-dev-20200710.2"
         }
       },
-      "Discord.Net.Commands/2.3.0-dev-20201014.8": {
+      "Discord.Net.Commands/2.3.0-dev-20200710.2": {
         "dependencies": {
-          "Discord.Net.Core": "2.3.0-dev-20201014.8"
+          "Discord.Net.Core": "2.3.0-dev-20200710.2"
         },
         "runtime": {
           "lib/netstandard2.1/Discord.Net.Commands.dll": {
@@ -346,9 +347,9 @@
           "lib/netstandard2.1/Discord.Net.Commands.dll": {}
         }
       },
-      "Discord.Net.Core/2.3.0-dev-20201014.8": {
+      "Discord.Net.Core/2.3.0-dev-20200710.2": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
+          "Newtonsoft.Json": "12.0.3",
           "System.Collections.Immutable": "1.3.1",
           "System.Interactive.Async": "4.0.0"
         },
@@ -362,9 +363,9 @@
           "lib/netstandard2.1/Discord.Net.Core.dll": {}
         }
       },
-      "Discord.Net.Rest/2.3.0-dev-20201014.8": {
+      "Discord.Net.Rest/2.3.0-dev-20200710.2": {
         "dependencies": {
-          "Discord.Net.Core": "2.3.0-dev-20201014.8"
+          "Discord.Net.Core": "2.3.0-dev-20200710.2"
         },
         "runtime": {
           "lib/netstandard2.1/Discord.Net.Rest.dll": {
@@ -376,10 +377,10 @@
           "lib/netstandard2.1/Discord.Net.Rest.dll": {}
         }
       },
-      "Discord.Net.Webhook/2.3.0-dev-20201014.8": {
+      "Discord.Net.Webhook/2.3.0-dev-20200710.2": {
         "dependencies": {
-          "Discord.Net.Core": "2.3.0-dev-20201014.8",
-          "Discord.Net.Rest": "2.3.0-dev-20201014.8"
+          "Discord.Net.Core": "2.3.0-dev-20200710.2",
+          "Discord.Net.Rest": "2.3.0-dev-20200710.2"
         },
         "runtime": {
           "lib/netstandard2.1/Discord.Net.Webhook.dll": {
@@ -391,10 +392,10 @@
           "lib/netstandard2.1/Discord.Net.Webhook.dll": {}
         }
       },
-      "Discord.Net.WebSocket/2.3.0-dev-20201014.8": {
+      "Discord.Net.WebSocket/2.3.0-dev-20200710.2": {
         "dependencies": {
-          "Discord.Net.Core": "2.3.0-dev-20201014.8",
-          "Discord.Net.Rest": "2.3.0-dev-20201014.8"
+          "Discord.Net.Core": "2.3.0-dev-20200710.2",
+          "Discord.Net.Rest": "2.3.0-dev-20200710.2"
         },
         "runtime": {
           "lib/netstandard2.1/Discord.Net.WebSocket.dll": {
@@ -594,11 +595,11 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/12.0.2": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.2.23222"
+            "fileVersion": "12.0.3.23909"
           }
         },
         "compile": {
@@ -3000,47 +3001,47 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Discord.Net/2.3.0-dev-20201014.8": {
+    "Discord.Net/2.3.0-dev-20200710.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-d1lSPrvRdwKKl8mJI2Oa5U13e1xqp+XYaOjiogxz4vlgi4ziVJ6OMKD4hre2rr6J/FO0/q4wA6fHsqClURe5mw==",
-      "path": "discord.net/2.3.0-dev-20201014.8",
-      "hashPath": "discord.net.2.3.0-dev-20201014.8.nupkg.sha512"
+      "sha512": "sha512-kuDaE1xWFIFODLg4yvN2x4IyorAvqrG/SlCu5gwTc4T8OexKg0shF2sv8uCpZgDbH/DrGNk9plNX/XvE4cf8RA==",
+      "path": "discord.net/2.3.0-dev-20200710.2",
+      "hashPath": "discord.net.2.3.0-dev-20200710.2.nupkg.sha512"
     },
-    "Discord.Net.Commands/2.3.0-dev-20201014.8": {
+    "Discord.Net.Commands/2.3.0-dev-20200710.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DZ5ilFRKZcsUojO7Ii0leOMMEAfLmdUO1kOgEAspQcRaxqvGYFOshNPBLlZWKuG6yyniYvjQhdwooswLd4zfaQ==",
-      "path": "discord.net.commands/2.3.0-dev-20201014.8",
-      "hashPath": "discord.net.commands.2.3.0-dev-20201014.8.nupkg.sha512"
+      "sha512": "sha512-GmdKhAYuR8yAH7/+yPyQzAJjRkGb+BYAxpFlVKPOsI3uGQvQ74glOM2LC8m6ARcICHJBZrUM6cl3EN//4EU6yg==",
+      "path": "discord.net.commands/2.3.0-dev-20200710.2",
+      "hashPath": "discord.net.commands.2.3.0-dev-20200710.2.nupkg.sha512"
     },
-    "Discord.Net.Core/2.3.0-dev-20201014.8": {
+    "Discord.Net.Core/2.3.0-dev-20200710.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ebJib+v4IFy8EcJXmyio1wpLziYangYR1cGOH/Y6h/q6Zoo0JjSAJf1aPLoJ9PlrgL87MbJRqaAiXGjOGpLbmA==",
-      "path": "discord.net.core/2.3.0-dev-20201014.8",
-      "hashPath": "discord.net.core.2.3.0-dev-20201014.8.nupkg.sha512"
+      "sha512": "sha512-sof6OBah/xWcGQrioyi045edpPBxCiizAe6Z6kmSrjxRNWCcrfNMw4vhnsrktgDrRI25r6zbPW8wRP2POa9ISg==",
+      "path": "discord.net.core/2.3.0-dev-20200710.2",
+      "hashPath": "discord.net.core.2.3.0-dev-20200710.2.nupkg.sha512"
     },
-    "Discord.Net.Rest/2.3.0-dev-20201014.8": {
+    "Discord.Net.Rest/2.3.0-dev-20200710.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7uwbMPo88fK61BKW2hFLpocb3Er6WN4gq6v5uEhkpf24xoyZu0tsndHRzBPLLcKQtb+x4imbn3JMQ5quyY7PeQ==",
-      "path": "discord.net.rest/2.3.0-dev-20201014.8",
-      "hashPath": "discord.net.rest.2.3.0-dev-20201014.8.nupkg.sha512"
+      "sha512": "sha512-sdZlLLOg/V+JMixkqC0wggDavG+xzI1/z2RgxvtwPSgdk75xPw7HWIXnd8JhtUmQKlbFSF3IrCsxkvvNNoefHw==",
+      "path": "discord.net.rest/2.3.0-dev-20200710.2",
+      "hashPath": "discord.net.rest.2.3.0-dev-20200710.2.nupkg.sha512"
     },
-    "Discord.Net.Webhook/2.3.0-dev-20201014.8": {
+    "Discord.Net.Webhook/2.3.0-dev-20200710.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UFfjOHjE2MoEELy35EA3jqDaVWlO2CpJIs+yWWkOQyokDR+nbpRD00LHNnn8KNQpW65Ddx7pL/QYBUz4JFsjsg==",
-      "path": "discord.net.webhook/2.3.0-dev-20201014.8",
-      "hashPath": "discord.net.webhook.2.3.0-dev-20201014.8.nupkg.sha512"
+      "sha512": "sha512-gFLdNDlGlGwDabyFUFaWj/UUXuK25H9dmp5SsZYRYLIrCEDv2nrefH8EUW2bXnA3BCIEBzBGiwK/cUz1lSzp+g==",
+      "path": "discord.net.webhook/2.3.0-dev-20200710.2",
+      "hashPath": "discord.net.webhook.2.3.0-dev-20200710.2.nupkg.sha512"
     },
-    "Discord.Net.WebSocket/2.3.0-dev-20201014.8": {
+    "Discord.Net.WebSocket/2.3.0-dev-20200710.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-APnjc7bJrKmJ1Q5StpMkojKEN9Q6ekGFd4FdFuG10dTh5sqzf+9v1z/1NjZNDXYl2UTr2/917AH3DAmXQHmw0A==",
-      "path": "discord.net.websocket/2.3.0-dev-20201014.8",
-      "hashPath": "discord.net.websocket.2.3.0-dev-20201014.8.nupkg.sha512"
+      "sha512": "sha512-R9pGtm07oFTKtgWllyr6sAwvez6KQUlvRpMG4KE0p9ntx+Xns0cHC1pn9L+BtMiJwlY+e3vfiyL6rPnRHCuQ+w==",
+      "path": "discord.net.websocket/2.3.0-dev-20200710.2",
+      "hashPath": "discord.net.websocket.2.3.0-dev-20200710.2.nupkg.sha512"
     },
     "DnsClient/1.3.1": {
       "type": "package",
@@ -3133,12 +3134,12 @@
       "path": "netstandard.library/1.6.1",
       "hashPath": "netstandard.library.1.6.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.2": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
-      "path": "newtonsoft.json/12.0.2",
-      "hashPath": "newtonsoft.json.12.0.2.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",

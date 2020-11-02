@@ -5,7 +5,7 @@
 @inject HttpClient HC
 
 @code{
-    private (string Name, Func<bool> Enabled, Action Callback)[] Stuff;
+    private (string Name, bool Enabled, Action Callback)[] Stuff;
 
     private bool CreateRole;
 
@@ -19,23 +19,23 @@
     }
 }
 
-<ClientDataWrapper Context="Data" OnDataReady="@((x) =>
-                                                                    {
+<ClientDataWrapper Context="Data" OnDataReady="@(x => 
+                                               {
 
-                                                     bool Yes = x.BaseData.Perks.Contains(DoomBot.Shared.Perks.Perk.RoleCustomizerPerk);
+                                                   bool CanCustomize = x.BaseData.Perks.Contains(DoomBot.Shared.Perks.Perk.RoleCustomizerPerk);
 
-                                                     Stuff = new (string Name, Func<bool> Enabled, Action Callback)[]
-                                                     {
-                           ("Overview", () => true, () => { Sel = "Overview"; StateHasChanged(); } ),
+                                                   Stuff = new (string Name, bool Enabled, Action Callback)[]
+                                                   {
+                                                       ("Overview", true, () => { Sel = "Overview"; StateHasChanged(); } ),
 
-                           ("Name", () => Yes, () => { Sel = "Name"; StateHasChanged(); } ),
+                                                       ("Name", CanCustomize, () => { Sel = "Name"; StateHasChanged(); } ),
 
-                           ("Color", () => Yes, () => { Sel = "Color"; StateHasChanged(); } ),
+                                                       ("Color", CanCustomize, () => { Sel = "Color"; StateHasChanged(); } ),
 
-                           ("Visibility", () => Yes, () => { Sel = "Visibility"; StateHasChanged(); } )
+                                                       ("Visibility", CanCustomize, () => { Sel = "Visibility"; StateHasChanged(); } )
 
-                                                     };
-                                                 })">
+                                                   };
+                                               })">
 
 
     <HeroMed Stuff="Stuff">

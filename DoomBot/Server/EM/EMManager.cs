@@ -25,7 +25,15 @@ namespace DoomBot.Server.EM
 
             foreach (var Data in CurrentPageElements)
             {
-                EM.AddField($"{Data.Emoji} | {Data.Name}", Data.Desc);
+                if (Data.Emoji == default)
+                {
+                    EM.AddField($"{Data.Name}", Data.Desc);   
+                }
+
+                else
+                {
+                    EM.AddField($"{Data.Emoji} | {Data.Name}", Data.Desc);
+                }
             }
 
             return EM.Build();
@@ -39,9 +47,9 @@ namespace DoomBot.Server.EM
         private readonly Queue<EmbedMenuInternal> Pool;
 
         private readonly HashSet<ulong> AccessingUsers;
-        
+
         private readonly DiscordAccessor DA;
-        
+
         public EMManager(DiscordAccessor DA)
         {
             Pool = new Queue<EmbedMenuInternal>();
@@ -108,9 +116,13 @@ namespace DoomBot.Server.EM
 
             private readonly SemaphoreSlim Lock;
 
+            private readonly HashSet<string> SButtons;
+
             public EmbedMenuInternal()
             {
                 Lock = new SemaphoreSlim(1, 1);
+                
+                SButtons = new HashSet<string>();
             }
             
             //Functions
@@ -145,16 +157,13 @@ namespace DoomBot.Server.EM
                 Prev = null;
 
                 this.User = User;
-                
-                var CurrentPageElements = GetCurrentPageElements();
-                
-                Msg = await Channel.SendMessageAsync(null, false, EMCompile(this, CurrentPageElements));
 
-                foreach (var Data in CurrentPageElements)
-                {
-                    ReactionQueue.Instance.Queue(Msg, Data.Emoji);
-                }
+                Msg = await Channel.SendMessageAsync(null, false, EMCompile(this, GetCurrentPageElements()));
+                
+                AddReactions();
 
+                AddSpecialButtons();
+                
                 //Add reaction handlers
             
                 EMM.DA.Client.ReactionAdded += OnReact;
@@ -168,6 +177,8 @@ namespace DoomBot.Server.EM
 
                 if (!await Act.Invoke(this))
                 {
+                    _ = Prev.Compile(Prev);
+                    
                     EMM.Recycle(this);
 
                     return;
@@ -203,18 +214,16 @@ namespace DoomBot.Server.EM
 
                 EMM.Recycle(Next);
             }
-            
+
             private async Task Compile(EmbedMenuInternal RefEM)
             {
-                var CurrentPageElements = GetCurrentPageElements();
-
                 this.User = RefEM.User;
 
                 var Channel = RefEM.Msg.Channel;
                 
                 if (Channel is SocketDMChannel)
                 {
-                    Msg = await Channel.SendMessageAsync(null, false, EMCompile(this, CurrentPageElements));
+                    Msg = await Channel.SendMessageAsync(null, false, EMCompile(this, GetCurrentPageElements()));
 
                     _ = RefEM.Msg.DeleteAsync();
                 }
@@ -223,21 +232,39 @@ namespace DoomBot.Server.EM
                 {
                     Msg = RefEM.Msg;
 
-                    _ = Msg.RemoveAllReactionsAsync();
+                    await Msg.RemoveAllReactionsAsync();
 
-                    _ = Msg.ModifyAsync(x => x.Embed = EMCompile(this, CurrentPageElements));
+                    _ = Msg.ModifyAsync(x => x.Embed = EMCompile(this, GetCurrentPageElements()));
                 }
 
-                foreach (var Data in CurrentPageElements)
-                {
-                    ReactionQueue.Instance.Queue(Msg, Data.Emoji);
-                }
+                AddReactions();
+
+                AddSpecialButtons();
 
                 //Add reaction handlers
             
                 EMM.DA.Client.ReactionAdded += OnReact;
 
                 _ = AutoCancel();
+            }
+
+            private void AddReactions()
+            {
+                SButtons.Clear();
+                
+                foreach (var Data in GetCurrentPageElements())
+                {
+                    string Emoji = Data.Emoji;
+                    
+                    if (Emoji == default || SButtons.Contains(Emoji))
+                    {
+                        continue;
+                    }
+
+                    SButtons.Add(Emoji);
+                    
+                    ReactionQueue.Instance.Queue(Msg, Emoji);
+                }
             }
 
             private async Task OnReact(Cacheable<IUserMessage, ulong> Cache, ISocketMessageChannel Channel, SocketReaction React)
@@ -257,7 +284,7 @@ namespace DoomBot.Server.EM
                     {
                         var Data = GetCurrentPageElements().FirstOrDefault(x => x.Emoji == RName);
 
-                        if (Data == default)
+                        if (Data == default || Data.Act == null)
                         {
                             return;
                         }
@@ -278,12 +305,13 @@ namespace DoomBot.Server.EM
 
             private bool SpecialButtons(string Emoji)
             {
-                Console.WriteLine(Emoji);
+                if (!SButtons.Contains(Emoji))
+                {
+                    return false;
+                }
                 
                 switch (Emoji)
                 {
-                    default: return false;
-                    
                     case "❎":
                     {
                         _ = Msg.Channel.SendMessageAsync(":white_check_mark: | Menu have been closed!");
@@ -297,11 +325,6 @@ namespace DoomBot.Server.EM
                     
                     case "🔙":
                     {
-                        if (Prev == default)
-                        {
-                            return false;
-                        }
-
                         _ = Prev.CompileFromNext(this);
 
                         break;
@@ -309,28 +332,18 @@ namespace DoomBot.Server.EM
                     
                     case "◀️":
                     {
-                        if (Page == 1)
-                        {
-                            return false;
-                        }
-
                         Page--;
                         
-                        _ = Compile(this);
+                        _ = CompileFromNext(this);
 
                         break;
                     }
                     
                     case "▶️":
                     {
-                        if (!PageIsSync(++Page))
-                        {
-                            Page--;
-                            
-                            return false;
-                        }
-
-                        _ = Compile(this);
+                        Page++;
+                        
+                        _ = CompileFromNext(this);
                         
                         break; 
                     }
@@ -401,6 +414,52 @@ namespace DoomBot.Server.EM
                 Prev?._ChainCancel();
 
                 EMM.AccessingUsers.Remove(User.Id);
+            }
+
+            private void AddSpecialButtons()
+            {
+                SButtons.Clear();
+                
+                string Emoji;
+
+                //Back
+                
+                if (Prev != default)
+                {
+                    Emoji = "🔙";
+                    
+                    SButtons.Add(Emoji);
+                    
+                    ReactionQueue.Instance.Queue(Msg, Emoji);
+                }
+                
+                //Prev
+                
+                if (Page != 1)
+                {
+                    Emoji = "◀️";
+                    
+                    SButtons.Add(Emoji);
+                    
+                    ReactionQueue.Instance.Queue(Msg, Emoji);
+                }
+                
+                //Next
+                        
+                if (PageIsSync(Page + 1))
+                {
+                    Emoji = "▶️";
+                    
+                    SButtons.Add(Emoji);
+                    
+                    ReactionQueue.Instance.Queue(Msg, Emoji);
+                }
+                
+                Emoji = "❎";
+                    
+                SButtons.Add(Emoji);
+                    
+                ReactionQueue.Instance.Queue(Msg, Emoji);
             }
         }
     }

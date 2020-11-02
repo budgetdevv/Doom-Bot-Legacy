@@ -15,20 +15,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/F8/ValueTuple.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/0c/bf6ca5d1/Void.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C259796E-CCF1-41D5-A691-24B74AA2E24E/5b/eae75e6c/FilterDefinitionBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/413/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41D00D8A-F8EB-42DD-A928-FE303DFF9335/bf/92c6a83e/Recycler`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Perks/PerkRole.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1695C3C1-488F-411E-A9C8-2DE07DF01A69/9/Queue.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/1695C3C1-488F-411E-A9C8-2DE07DF01A69/59/0a5bcab7/02000015pdb.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/68/88fdfc64/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80B8258E-FFAE-4B83-B221-D4D2D82CA6A5/48/72fd0d21/BaseSocketClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/F8/ValueTuple.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1695C3C1-488F-411E-A9C8-2DE07DF01A69/76/daf8bf80/NullableAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/0c/bf6ca5d1/Void.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C259796E-CCF1-41D5-A691-24B74AA2E24E/5b/eae75e6c/FilterDefinitionBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/1695C3C1-488F-411E-A9C8-2DE07DF01A69/18/6ff87df5/02000003.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41D00D8A-F8EB-42DD-A928-FE303DFF9335/bf/92c6a83e/Recycler`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Perks/PerkRole.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/a3/62a1d990/Func`2.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DoomBot/Server/EM/EmbedMenu.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Command/GuildAdmin.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Mongo/MDB.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Inventory.cs" />
@@ -36,10 +39,13 @@
         <option value="$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Perks/PerkRole.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Perks/RolePerkModule.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/InventoryModule.cs" />
-        <option value="$PROJECT_DIR$/DoomBot/Server/Command/Public.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Managers/EconManager.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/EM/ReactionQueue.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/EM/EmbedMenu.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/Command/Public.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/EM/EMManager.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Client/Pages/RolePerk.razor" />
+        <option value="$PROJECT_DIR$/DoomBot/Client/Shared/HeroMed.razor" />
       </list>
     </option>
   </component>
@@ -49,12 +55,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34973544" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3005291" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30065006" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="RiderIisExpressOptionsPageId" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.DoomBot.Server">
+  <component name="RunManager" selected="Publish to folder.Publish DoomBot.Client to folder">
+    <configuration name="Publish DoomBot.Client to folder" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="C:\Users\Administrator\Desktop\DoomBot\DoomBot\Client\bin\Release\net5.0\browser-wasm\publish" target_framework="netcoreapp5.0" uuid_high="1036051614343578763" uuid_low="-6028358942032405405" />
+      <method v="2" />
+    </configuration>
     <configuration name="DoomBot.Client: DoomBot" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/DoomBot/Client/DoomBot.Client.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v5.0" />
@@ -120,7 +130,13 @@
       <item itemvalue=".NET Launch Settings Profile.DoomBot.Client: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.DoomBot.Server" />
       <item itemvalue=".NET Launch Settings Profile.DoomBot.Server: IIS Express" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Client to folder" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Publish to folder.Publish DoomBot.Client to folder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
@@ -133,86 +149,86 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604322589426" />
-    <state width="1921" height="295" key="GridCell.Tab.0.bottom" timestamp="1604323359417">
+    <state width="1877" height="374" key="GridCell.Tab.0.bottom" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604323359417" />
-    <state width="1921" height="295" key="GridCell.Tab.0.center" timestamp="1604323359417">
+    <state width="1877" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.0.center" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604323359417" />
-    <state width="1921" height="295" key="GridCell.Tab.0.left" timestamp="1604323359417">
+    <state width="1877" height="374" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.0.left" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604323359417" />
-    <state width="1921" height="295" key="GridCell.Tab.0.right" timestamp="1604323359417">
+    <state width="1877" height="374" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.0.right" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604323359417" />
-    <state width="1921" height="383" key="GridCell.Tab.1.bottom" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.1.bottom" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.1.center" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.1.center" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.1.left" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.1.left" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.1.right" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.1.right" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.2.bottom" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.2.bottom" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.2.center" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.2.center" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.2.left" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.2.left" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.2.right" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.2.right" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.3.bottom" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.3.bottom" timestamp="1604357854190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
-    <state width="1921" height="383" key="GridCell.Tab.3.center" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854190" />
+    <state width="1877" height="374" key="GridCell.Tab.3.center" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
-    <state width="1921" height="383" key="GridCell.Tab.3.left" timestamp="1604323357981">
+    <state width="1877" height="374" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.3.left" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357981" />
-    <state width="1921" height="383" key="GridCell.Tab.3.right" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1877" height="374" key="GridCell.Tab.3.right" timestamp="1604357854190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
-    <state width="1921" height="383" key="GridCell.Tab.4.bottom" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854190" />
+    <state width="1877" height="374" key="GridCell.Tab.4.bottom" timestamp="1604357854190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.4.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
-    <state width="1921" height="383" key="GridCell.Tab.4.center" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.4.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854190" />
+    <state width="1877" height="374" key="GridCell.Tab.4.center" timestamp="1604357854190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.4.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
-    <state width="1921" height="383" key="GridCell.Tab.4.left" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.4.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854190" />
+    <state width="1877" height="374" key="GridCell.Tab.4.left" timestamp="1604357854190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.4.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
-    <state width="1921" height="383" key="GridCell.Tab.4.right" timestamp="1604323357982">
+    <state width="1877" height="374" key="GridCell.Tab.4.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854190" />
+    <state width="1877" height="374" key="GridCell.Tab.4.right" timestamp="1604357854190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1921" height="383" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604323357982" />
+    <state width="1877" height="374" key="GridCell.Tab.4.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854190" />
     <state x="821" y="209" key="RiderGenerateDialog" timestamp="1604264648681">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

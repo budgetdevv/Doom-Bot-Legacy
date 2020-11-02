@@ -1,7 +1,7 @@
 ﻿@code{
     [Parameter]
 
-    public (string Name, Func<bool> Enabled, Action Callback)[] Stuff { get; set; }
+    public (string Name, bool Enabled, Action Callback)[] Stuff { get; set; }
 
     [Parameter]
 
@@ -57,7 +57,7 @@
                             <li class="is-active"><a class="has-text-dark">@S.Name</a></li>
                         }
 
-                        else if (S.Enabled.Invoke())
+                        else if (S.Enabled)
                         {
                             <li @onclick="@( () => { CurrentStuff = S.Name; S.Callback.Invoke(); } )"><a class="has-text-dark">@S.Name</a></li>
                         }

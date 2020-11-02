@@ -70,9 +70,7 @@ public class ReactionQueue
 
                 Data = (MsgChID, new Queue<(IUserMessage Msg, string Reaction)>());
 
-                Console.WriteLine($"{RQ.Add(Data)} | {RQ.Count}");
-
-                Queue(Msg, React);
+                RQ.Add(Data);
             }
 
             var TheQueue = Data.Queue;
@@ -88,18 +86,22 @@ public class ReactionQueue
 
     private async Task ProcQueue(Queue<(IUserMessage Msg, string Reaction)> Queue)
     {
-        await Task.Delay(250);
-        
         while (Queue.Count != 0)
         {
-            var ReactMsg = Queue.Dequeue();
+            var ReactMsg = Queue.Peek();
 
             var Msg = ReactMsg.Msg;
 
             if (Msg != default)
             {
+                var DT = DateTime.UtcNow;
+
                 await Msg.AddReactionAsync(new Emoji(ReactMsg.Reaction), BypassRL);
+                
+                Console.WriteLine((DateTime.UtcNow - DT).TotalMilliseconds);
             }
+
+            Queue.Dequeue();
         }
     }
 }

@@ -200,12 +200,12 @@
       "System.Private.CoreLib.dll": "sha256-Adef1YZ6wqoJsPua67RzEoHgixp5VaxcT598E6BHUwU=",
       "DoomBot.Shared.dll": "sha256-cGEEKBHGUR+L3Ub4i01wqf1NXgPmoHVKoxZifLE\/P5Y=",
       "Recycler.dll": "sha256-sg\/t\/nMv1A\/sTmSV5wCJX57d9UpcQTd+OxFRfrw3FJY=",
-      "DoomBot.Client.dll": "sha256-ReRq7IYbznGo2LxKXGiG4yZWeSwGnUyaBGwP5kmewkM="
+      "DoomBot.Client.dll": "sha256-F5pnmOercOfJu5ylkLS5RJgu\/+8Y54shXUAvheOAHyg="
     },
     "lazyAssembly": null,
     "pdb": {
       "DoomBot.Shared.pdb": "sha256-8PiozgF6mkXCBhZBXe5AYlt7TYDj4\/FYszwT4Yu7D+E=",
-      "DoomBot.Client.pdb": "sha256-Q5IW1JbcsoaGGKrOugrHU0WDDzbjreXSnCJMExGrwbg="
+      "DoomBot.Client.pdb": "sha256-oI53wMqeNqm7Sa0IIc4PlaLJsyNt1gR6Ssqpqcy2xZ8="
     },
     "runtime": {
       "dotnet.wasm": "sha256-sM00FtqUHIlrUdb02MY\/qfdHC8Wj3ZQzQbgAHOGI\/QM=",

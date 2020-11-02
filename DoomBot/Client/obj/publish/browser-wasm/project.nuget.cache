@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T6TQc6LESbhqGfYwBKRYYU/PilHTWUJS3HdVojDVqJ7SgNwl0yvsyK8eHWLY8VMPar2kh9i+IOAUjuEfsupfKg==",
+  "dgSpecHash": "gJ7gkE3CYjcqNIIXdogUchOZMIdA+dAMYJpgRU3hiuDGTwCYgqQPc9Am8yP5HaEA+yEaobFDb7cZ9IbN8D+b+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\DoomBot\\Client\\DoomBot.Client.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Client\\DoomBot.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\blazored.localstorage\\3.0.0\\blazored.localstorage.3.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.authorization.5.0.0-rc.2.20475.17.nupkg.sha512",
