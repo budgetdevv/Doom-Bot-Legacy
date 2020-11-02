@@ -133,14 +133,9 @@
         <e p="Startup.cs" t="Include" />
       </e>
       <e p="DoomBot\Shared" t="IncludeRecursive">
-        <e p="Android" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="browser" t="Include" />
         <e p="DoomBot.Shared.csproj" t="IncludeRecursive" />
         <e p="HttpHelper.cs" t="Include" />
-        <e p="iOS" t="Include" />
-        <e p="Linux" t="Include" />
-        <e p="macOS" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="net5.0" t="Include">
@@ -158,7 +153,6 @@
           <e p="Recycler.dll" t="Include" />
         </e>
         <e p="ValueTupleFactory.cs" t="Include" />
-        <e p="Windows" t="Include" />
       </e>
       <e p="DoomBot.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

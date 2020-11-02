@@ -17,13 +17,13 @@ namespace DoomBot.Server.Modules
 {
     public sealed class RolePerkModule : DoomModuleBase<PerkRole>
     {
-        private DiscordAccessor DA;
+        private readonly DiscordAccessor DA;
 
         private InventoryModule IM;
 
-        private PerksManager PM;
+        private readonly PerksManager PM;
 
-        public RolePerkModule(DiscordAccessor DA, InventoryModule IM, PerksManager PM, MDB DB) : base(DB, "PerkRoles")
+        public RolePerkModule(DiscordAccessor DA, InventoryModule IM, PerksManager PM, MDB DB) : base("PerkRoles", DB)
         {
             this.DA = DA;
 
@@ -42,45 +42,21 @@ namespace DoomBot.Server.Modules
             return PM.HasPerk(Perk.RoleCustomizerPerk, User);
         }
 
-        public async Task<MongoDataWrapper> TryGetRole(SocketGuildUser User)
+        public async Task<ModuleDataWrapper<PerkRole>> TryGetRole(SocketGuildUser User)
         {
             if (!EligibleForRole(User))
             {
-                return default;
+                return null;
             }
 
             long UserID = (long)User.Id;
 
-            var PerksRole = await GetData(UserID);
+            var PerksRole = await TryGetData(UserID);
 
-            if (PerksRole == default)
-            {
-                return default;
-            }
-
-            return PerksRole;
+            return PerksRole ?? null;
         }
 
-        public async Task<PerkRole> TryGetRoleUnwrapped(SocketGuildUser User)
-        {
-            if (!EligibleForRole(User))
-            {
-                return default;
-            }
-
-            long UserID = (long)User.Id;
-
-            var PerksRole = await GetDataUnwrapped(UserID);
-
-            if (PerksRole == default)
-            {
-                return default;
-            }
-
-            return PerksRole;
-        }
-
-        public async Task<MongoDataWrapper> CreateRole(SocketGuildUser User, RoleData Data)
+        public async Task<ModuleDataWrapper<PerkRole>> CreateRole(SocketGuildUser User, RoleData Data)
         {
             long UserID = (long)User.Id;
 
@@ -90,26 +66,21 @@ namespace DoomBot.Server.Modules
 
             var NewRole = await Task.Run(async () => await DA.CurrentGuild.CreateRoleAsync("New Role", default, default, default, default));
 
-            var PerksRole = await CreateData(UserID, new PerkRole(UserID, NewRole.Id));
+            var PerksRole = CreateData(UserID, new PerkRole(UserID, NewRole.Id));
 
             return PerksRole;
         }
 
-        public void DeleteRole(SocketGuildUser User)
-        {
-            DeleteData((long)User.Id);
-        }
-
         public async Task<RoleData> GenRoleData(SocketGuildUser User)
         {
-            var Data = await GetDataUnwrapped((long)User.Id);
+            var Data = await TryGetData((long)User.Id);
 
             if (Data == default)
             {
                 return default;
             }
 
-            var Role = TryGetSocketRole(User, Data.RoleID);
+            var Role = TryGetSocketRole(User, Data.Data.RoleID);
 
             if (Role == default)
             {
@@ -123,7 +94,7 @@ namespace DoomBot.Server.Modules
             return RD;
         }
 
-        public RoleData WriteRoleData(SocketGuildUser User, SocketRole Role, RoleData Data)
+        private static RoleData WriteRoleData(SocketGuildUser User, SocketRole Role, RoleData Data)
         {
             Data.Name = Role.Name;
 
@@ -144,7 +115,7 @@ namespace DoomBot.Server.Modules
 
             if (Role == default)
             {
-                DeleteData((long)User.Id);
+                _ = DeleteData((long)User.Id);
 
                 return default;
             }
@@ -152,52 +123,57 @@ namespace DoomBot.Server.Modules
             return Role;
         }
 
-        public async Task<RoleData> TrySetRoleData(SocketGuildUser User, RoleData RoleData)
+        public async Task<RoleData> TryApplyRoleData(SocketGuildUser User, RoleData RoleData)
         {
-            if (EligibleForRole(User))
+            if (!EligibleForRole(User))
             {
-                var Data = await GetDataUnwrapped((long)User.Id);
-
-                ulong RoleID = (Data == default) ? default : Data.RoleID;
-
-                var Role = (RoleID == default) ? default : TryGetSocketRole(User, RoleID);
-
-                if (Role == default)
-                {
-                    using var NewData = await CreateRole(User, RoleData);
-
-                    Role = TryGetSocketRole(User, NewData.Data.RoleID);
-                }
-
-                try
-                {
-                        if (RoleData.Enabled)
-                        {
-                            await User.AddRoleAsync(Role);
-                        }
-
-                        else
-                        {
-                            await User.RemoveRoleAsync(Role);
-                        }
-
-                        if (CanCustomizeRole(User))
-                        {
-                            await Role.ModifyAsync(x => { x.Name = RoleData.Name; x.Color = new Color(RoleData.Color); x.Hoist = RoleData.Hoisted; });
-                        }
-                }
-
-                catch
-                {
-
-                }
-
-                WriteRoleData(User, Role, RoleData);
-
-                return RoleData;
+                return default;
             }
 
-            return default;
+            using var Data = await TryGetData((long)User.Id);
+
+            ulong RoleID = Data?.Data.RoleID ?? default;
+
+            var Role = (RoleID == default) ? default : TryGetSocketRole(User, RoleID);
+
+            if (Role == default)
+            {
+                using var NewData = await CreateRole(User, RoleData);
+
+                Role = TryGetSocketRole(User, NewData.Data.RoleID);
+            }
+
+            try
+            {
+                if (RoleData.Enabled)
+                {
+                    await User.AddRoleAsync(Role);
+                }
+
+                else
+                {
+                    await User.RemoveRoleAsync(Role);
+                }
+
+                if (CanCustomizeRole(User))
+                {
+                    await Role.ModifyAsync(x =>
+                    {
+                        x.Name = RoleData.Name;
+                        x.Color = new Color(RoleData.Color);
+                        x.Hoist = RoleData.Hoisted;
+                    });
+                }
+            }
+
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex);
+            }
+            
+            WriteRoleData(User, Role, RoleData);
+
+            return RoleData;
         }
     }
 }

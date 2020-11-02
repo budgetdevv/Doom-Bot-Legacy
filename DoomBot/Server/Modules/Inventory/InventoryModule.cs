@@ -5,70 +5,35 @@ using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace DoomBot.Server.Modules
 {
     public sealed class InventoryModule: DoomModuleBase<Inventory>
     {
-        public InventoryModule(MDB DB): base (DB, "Inventories")
+        public InventoryModule(MDB DB): base ("Inventories", DB)
         {
             //Nothing here xd
         }
 
         //An Inventory instance is guaranteed
 
-        public async Task<MongoDataWrapper> GetOrCreateInv(long UserID)
+        public async Task<ModuleDataWrapper<Inventory>> GetOrCreateInv(long ID)
         {
-            var Inv = await GetData(UserID);
+            var Inv = await TryGetData(ID);
 
-            if (Inv == default)
-            {
-                Inv = await CreateData(UserID, new Inventory(UserID));
-            }
-
-            return Inv;
+            return Inv ?? CreateData(ID, new Inventory(ID));
         }
 
-        public async Task<Inventory> GetOrCreateInvUnwrapped(long UserID)
+        public async Task<ModuleDataWrapper<Inventory>> TryGetInv(long ID)
         {
-            var Inv = await GetDataUnwrapped(UserID);
-
-            if (Inv == default)
-            {
-                Inv = await CreateDataUnwrapped(UserID, new Inventory(UserID));
-            }
-
-            return Inv;
+            return await TryGetData(ID) ?? null;
         }
 
-        public async Task<MongoDataWrapper> TryGetInv(long UserID)
+        public IEnumerable<ModuleDataWrapper<Inventory>> GetInvs()
         {
-            var Inv = await GetData(UserID);
-
-            if (Inv == default)
-            {
-                return default;
-            }
-
-            return Inv;
-        }
-
-        public async Task<Inventory> TryGetInvUnwrapped(long UserID)
-        {
-            var Inv = await GetDataUnwrapped(UserID);
-
-            if (Inv == default)
-            {
-                return default;
-            }
-
-            return Inv;
-        }
-
-        public void DeleteInv(long UserID)
-        {
-            DeleteData(UserID);
+            return GetCollection();
         }
     }
 }

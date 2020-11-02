@@ -5,229 +5,231 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Discord.Commands;
+using IdGen;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 
 namespace DoomBot.Server.Modules
 {
+    public class ModuleDataWrapper<T>: IDisposable
+    {
+        protected ModuleDataWrapper()
+        {
+            //Nothing here xd
+        }
+        
+        protected static Action<ModuleDataWrapper<T>> Callback;
+
+        public BsonValue ID { get; protected set; }
+        
+        public T Data { get; protected set; }
+        
+        public void Dispose()
+        {
+            Callback(this);
+        }
+    }
+    
     public class DoomModuleBase<T>
     {
-        private class ModuleBasePoolComparer : IEqualityComparer<(BsonValue ID, T Data)>
+        private class ModuleDataPoolComparer : IEqualityComparer<ModuleDataWrapper<T>>
         {
-            public bool Equals((BsonValue ID, T Data) X, (BsonValue ID, T Data) Y)
+            public bool Equals(ModuleDataWrapper<T> X, ModuleDataWrapper<T> Y)
             {
                 return X.ID == Y.ID;
             }
 
-            public int GetHashCode((BsonValue ID, T Data) Obj)
+            public int GetHashCode(ModuleDataWrapper<T> Obj)
             {
                 return Obj.ID.GetHashCode();
             }
         }
-
-        public sealed class MongoDataWrapper : IDisposable
+        
+        private class ModuleDataWrapperInternal: ModuleDataWrapper<T>
         {
-            //Static
-
-            private static readonly Queue<MongoDataWrapper> Recycled = new Queue<MongoDataWrapper>();
-
-            public static MongoDataWrapper Create(T Data, Action<MongoDataWrapper, bool> DataUpdater)
+            public static void SetCallback(Action<ModuleDataWrapper<T>> Callback)
             {
-                if (Recycled.TryDequeue(out var W))
-                {
-                    W.Data = Data;
-
-                    W.DataUpdater = DataUpdater;
-                }
-
-                else
-                {
-                    W = new MongoDataWrapper(Data, DataUpdater);
-                }
-
-                return W;
+                ModuleDataWrapper<T>.Callback = Callback;
             }
 
-            public static void Recycle(MongoDataWrapper Wrapper)
+            public void SetID(BsonValue ID)
             {
-                Wrapper.Disposed = false;
-
-                Recycled.Enqueue(Wrapper);
+                this.ID = ID;
             }
-
-            //Instance
-
-            public T Data;
-
-            public bool Disposed;
-
-            private Action<MongoDataWrapper, bool> DataUpdater;
-
-            private MongoDataWrapper(T Data, Action<MongoDataWrapper, bool> DataUpdater)
+            
+            public void SetData(T Data)
             {
                 this.Data = Data;
-
-                this.DataUpdater = DataUpdater;
-            }
-
-            private void Update(bool Immediate = false)
-            {
-                DataUpdater.Invoke(this, false);
-            }
-
-            public void Dispose()
-            {
-                Disposed = true;
-
-                Update();
             }
         }
-
-        private readonly HashSet<(BsonValue ID, T Data)> Pool;
-
-        private readonly HashSet<(BsonValue ID, T Data)> UpdateQueue;
-
-        private readonly MDB DB;
-
-        private readonly string CollectionType;
-
-        //Allows customization of Pool Purge behaviour
         
-        private Action<HashSet<(BsonValue ID, T Data)>> CustomDataPoolLoop;
+        private readonly string CollectionName;
+        
+        private readonly MDB DB;
+        
+        private readonly HashSet<ModuleDataWrapper<T>> Pool;
 
-        protected DoomModuleBase(MDB _DB, string _CollectionType)
+        private readonly HashSet<ModuleDataWrapper<T>> UpdateQueue;
+
+        private readonly Queue<ModuleDataWrapperInternal> InternalPool;
+
+        protected DoomModuleBase(string CollectionName, MDB DB)
         {
-            DB = _DB;
+            ModuleDataWrapperInternal.SetCallback(WrapperCallback);
+            
+            this.CollectionName = CollectionName;
+            
+            this.DB = DB;
 
-            Pool = new HashSet<(BsonValue ID, T Data)>(new ModuleBasePoolComparer());
+            var Comparer = new ModuleDataPoolComparer();
+            
+            Pool = new HashSet<ModuleDataWrapper<T>>(Comparer);
+            
+            UpdateQueue = new HashSet<ModuleDataWrapper<T>>(Comparer);
 
-            UpdateQueue = new HashSet<(BsonValue ID, T Data)>();
-
-            CollectionType = _CollectionType;
+            InternalPool = new Queue<ModuleDataWrapperInternal>();
 
             Task.Run(Loop);
         }
 
-        protected async Task<MongoDataWrapper> GetData(BsonValue ID)
-        {
-            if (Pool.TryGetValue((ID, default), out var Data))
-            {
-                return WrapData(ID, Data.Data);
-            }
-
-            var DataFromDB = await DB.Get<T>(CollectionType, ID);
-
-            if (DataFromDB == null)
-            {
-                return default;
-            }
-
-            //Add it to the pool so subsequent access can be faster
-
-            Pool.Add((ID, DataFromDB));
-
-            return WrapData(ID, DataFromDB);
-        }
-
-
-
-        protected void DeleteData(BsonValue ID)
-        {
-            Pool.Remove((ID, default));
-
-            Task.Run(async () =>
-            {
-                await DB.Delete<T>(CollectionType, ID);
-            });
-        }
-
-        private MongoDataWrapper WrapData(BsonValue ID, T Data)
-        {
-            return MongoDataWrapper.Create(Data, async (Wrapper, Immediate) => await WrapperUpdaterCallback(ID, Wrapper, Immediate));
-        }
-
-        private async Task WrapperUpdaterCallback(BsonValue ID, MongoDataWrapper Wrapper, bool Immediate)
-        {
-            await UpdateData(ID, Wrapper.Data, Immediate);
-
-            if (Wrapper.Disposed)
-            {
-                MongoDataWrapper.Recycle(Wrapper);
-            }
-        }
-
-        private async Task UpdateData(BsonValue ID, T Data, bool Immediate = false)
-        {
-            if (!Immediate)
-            {
-                UpdateQueue.Add((ID, Data));
-
-                return;
-            }
-
-            await Task.Run( async () => await DB.Upsert(CollectionType, ID, Data));
-        }
-
-        protected async Task<MongoDataWrapper> CreateData(BsonValue ID, T NewData)
-        {
-            Pool.Add((ID, NewData));
-
-            await UpdateData(ID, NewData, true);
-
-            return WrapData(ID, NewData);
-        }
-
-
-
-        //Unwrapped
-
-        protected async Task<T> GetDataUnwrapped(BsonValue ID)
-        {
-            if (Pool.TryGetValue((ID, default), out var Data))
-            {
-                return Data.Data;
-            }
-
-            var DataFromDB = await DB.Get<T>(CollectionType, ID);
-
-            if (DataFromDB == null)
-            {
-                return default;
-            }
-
-            //Add it to the pool so subsequent access can be faster
-
-            Pool.Add((ID, DataFromDB));
-
-            return DataFromDB;
-        }
-
-        protected async Task<T> CreateDataUnwrapped(BsonValue ID, T NewData)
-        {
-            Pool.Add((ID, NewData));
-
-            await UpdateData(ID, NewData, true);
-
-            return NewData;
-        }
-
         private async Task Loop()
         {
+            var TaskList = new List<Task>();
+            
             while (true)
             {
-                //Update stuff in Queue
+                //Update Data
 
                 foreach (var Data in UpdateQueue)
                 {
-                    _ = UpdateData(Data.ID, Data.Data, true);
+                    Task.Run(async () => await UpdateData(Data));
                 }
-
-                UpdateQueue.Clear();
-
-                //Trim Pool if its too huge...
-
-                CustomDataPoolLoop?.Invoke(Pool);
                 
                 await Task.Delay(10000);
             }
+        }
+        
+        private void WrapperCallback(ModuleDataWrapper<T> Data)
+        {
+            UpdateQueue.Add(Data);
+        }
+
+        protected async Task UpdateData(ModuleDataWrapper<T> Data)
+        {
+            await DB.Upsert(CollectionName, Data.ID, Data.Data);
+        }
+        
+        private ModuleDataWrapperInternal GenWrapper()
+        {
+            return !InternalPool.TryDequeue(out var IWrapper) ? IWrapper : new ModuleDataWrapperInternal();
+        }
+        
+        //Recycling wrappers to avoid GC
+        
+        protected async Task<ModuleDataWrapper<T>> TryGetData(BsonValue ID)
+        {
+            var IWrapper = GenWrapper();
+
+            IWrapper.SetID(ID);
+
+            if (Pool.TryGetValue(IWrapper, out var Data))
+            {
+                InternalPool.Enqueue(IWrapper);
+                
+                return Data;
+            }
+
+            var DataT = await DB.Get<T>(CollectionName, ID);
+
+            if (DataT == null)
+            {
+                InternalPool.Enqueue(IWrapper);
+
+                return null;
+            }
+
+            IWrapper.SetData(DataT);
+
+            Pool.Add(IWrapper);
+            
+            return IWrapper;
+        }
+
+        protected IEnumerable<ModuleDataWrapper<T>> GetCollection()
+        {
+            foreach (var P in Pool)
+            {
+                yield return P;
+            }
+            
+            var Col = DB.GetCollection<T>(CollectionName);
+
+            if (Col == null)
+            {
+                yield break;
+            }
+            
+            foreach (var C in Col)
+            {
+                var IWrapper = GenWrapper();
+                
+                IWrapper.SetID(C["_id"]);
+
+                if (Pool.Contains(IWrapper))
+                {
+                    InternalPool.Enqueue(IWrapper);
+                    
+                    continue;
+                }
+                
+                IWrapper.SetData(BsonSerializer.Deserialize<T>(C));
+
+                Pool.Add(IWrapper);
+                
+                yield return IWrapper;
+            }
+        }
+
+        protected ModuleDataWrapper<T> CreateData(BsonValue ID, T Data)
+        {
+            var IWrapper = GenWrapper();
+            
+            IWrapper.SetID(ID);
+            
+            IWrapper.SetData(Data);
+
+            Pool.Add(IWrapper);
+
+            UpdateQueue.Add(IWrapper);
+
+            return IWrapper;
+        }
+
+        protected async Task DeleteData(BsonValue ID, ModuleDataWrapper<T> Data)
+        {
+            InternalPool.Enqueue((ModuleDataWrapperInternal)Data);
+            
+            Pool.Remove(Data);
+
+            await DB.Delete<T>(CollectionName, ID);
+        }
+        
+        protected async Task DeleteData(BsonValue ID)
+        {
+            var IWrapper = GenWrapper();
+            
+            IWrapper.SetID(ID);
+
+            if (Pool.TryGetValue(IWrapper, out var Data))
+            {
+                Pool.Remove(Data);
+                
+                InternalPool.Enqueue((ModuleDataWrapperInternal)Data);
+            }
+            
+            InternalPool.Enqueue(IWrapper);
+
+            await DB.Delete<T>(CollectionName, ID);
         }
     }
 }

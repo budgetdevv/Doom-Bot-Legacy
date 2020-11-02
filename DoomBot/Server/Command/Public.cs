@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using DoomBot.Server.EM;
 using DoomBot.Server.Managers;
 using DoomBot.Server.Modules;
 
@@ -14,12 +16,24 @@ namespace DoomBot.Server.Command
     {
         // Dependency Injection will fill this value in for us
 
+        // ReSharper disable MemberCanBePrivate.Global
+        
+        // ReSharper disable UnusedAutoPropertyAccessor.Global
+        
         public AuthManager AM { get; set; }
-
+        
         public InventoryModule IM { get; set; }
+        
 
         public DiscordAccessor DA { get; set; }
 
+
+        public EMManager EMM { get; set; }
+
+        // ReSharper restore MemberCanBePrivate.Global
+        
+        // ReSharper restore UnusedAutoPropertyAccessor.Global
+        
         [Command("logmein", RunMode = RunMode.Async)]
         public async Task LogMeIn()
         {
@@ -58,17 +72,36 @@ namespace DoomBot.Server.Command
         [Command("balance", RunMode = RunMode.Async)]
         public async Task Balance(IUser User = default)
         {
-            if (User == default)
-            {
-                User = Context.User;
-            }
+            User ??= Context.User;
 
-            _ = ReplyAsync($":moneybag: | {User.Mention}'s balance is ${(await IM.GetOrCreateInvUnwrapped((long)User.Id)).Cash}");
+            _ = ReplyAsync($":moneybag: | {User.Mention}'s balance is ${(await IM.GetOrCreateInv((long) User.Id)).Data.Cash}");
         }
         
         [Command("lbcash", RunMode = RunMode.Async)]
         public async Task LBCash()
         {
+            Console.WriteLine("Mirror Dimension");
+            
+            bool Success = EMM.Gen(Context.User, Context.Channel, async (EM) =>
+            {
+                EM.Title = "Cash Leaderboard";
+
+                EM.Desc = "Oh yes";
+                
+                foreach (var Data in IM.GetInvs().OrderByDescending(x => x.Data.Cash))
+                {
+                    var Inv = Data.Data;
+                    
+                    EM.AddElement("🙏🏻", Context.Guild.GetUser((ulong)Inv.ID)?.ToString(), $"${Inv.Cash}", default);
+                }
+                
+                return true;
+            });
+
+            if (!Success)
+            {
+                _ = ReplyAsync("NAHHH");
+            }
             
         }
     }

@@ -36,7 +36,7 @@ namespace DoomBot.Server.EM
             EM = new EmbedBuilder();
         }
         
-        private readonly Queue<EmbedMenu> Pool;
+        private readonly Queue<EmbedMenuInternal> Pool;
 
         private readonly HashSet<ulong> AccessingUsers;
         
@@ -44,7 +44,7 @@ namespace DoomBot.Server.EM
         
         public EMManager(DiscordAccessor DA)
         {
-            Pool = new Queue<EmbedMenu>();
+            Pool = new Queue<EmbedMenuInternal>();
             
             AccessingUsers = new HashSet<ulong>();
 
@@ -61,12 +61,27 @@ namespace DoomBot.Server.EM
             {
                 return false;
             }
-            
+
+            AccessingUsers.Add(User.Id);
+
+            if (Pool.TryDequeue(out var x))
+            {
+                _ = x.CompileNew(User, MC, Act);
+            }
+
+            else
+            {
+                x = new EmbedMenuInternal();
+                
+                _ = x.CompileNew(User, MC, Act);
+            }
+
+            return true;
         }
 
         private void Recycle(EmbedMenu EM)
         {
-            Pool.Enqueue(EM);
+            Pool.Enqueue((EmbedMenuInternal)EM);
         }
 
         //Sealed Class
@@ -89,9 +104,9 @@ namespace DoomBot.Server.EM
 
             private bool OverrideAutoCancel;
 
-            private SemaphoreSlim Lock;
+            private readonly SemaphoreSlim Lock;
 
-            private EmbedMenuInternal()
+            public EmbedMenuInternal()
             {
                 Lock = new SemaphoreSlim(1, 1);
             }
@@ -298,6 +313,8 @@ namespace DoomBot.Server.EM
                         Page--;
                         
                         _ = Compile(this);
+
+                        break;
                     }
                     
                     case "▶":
@@ -310,6 +327,8 @@ namespace DoomBot.Server.EM
                         }
 
                         _ = Compile(this);
+                        
+                        break;
                     }
                 }
 

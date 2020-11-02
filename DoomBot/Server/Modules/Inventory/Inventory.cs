@@ -54,9 +54,9 @@ namespace DoomBot.Server.Modules
 
     public class InvItemComparer : IEqualityComparer<(string ID, string Name, string Desc, int Quantity)>
     {
-        public bool Equals((string ID, string Name, string Desc, int Quantity) x, (string ID, string Name, string Desc, int Quantity) y)
+        public bool Equals((string ID, string Name, string Desc, int Quantity) X, (string ID, string Name, string Desc, int Quantity) Y)
         {
-            if (x.ID == y.ID && x.Name == y.Name)
+            if (X.ID == Y.ID && X.Name == Y.Name)
             {
                 return true;
             }

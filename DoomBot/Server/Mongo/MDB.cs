@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MongoDB.Driver.Core.Operations;
+using MongoDB.Driver.Linq;
 
 namespace DoomBot.Server.MongoDB
 {
@@ -14,11 +15,15 @@ namespace DoomBot.Server.MongoDB
     {
         private IMongoDatabase DB;
 
+        private HashSet<string> LoadedFull;
+        
         public MDB()
         {
             var DBClient = new MongoClient();
 
             DB = DBClient.GetDatabase("DoomBot");
+
+            LoadedFull = new HashSet<string>();
         }
 
         public async Task Upsert<T>(string Type, BsonValue ID, T Data)
@@ -62,9 +67,18 @@ namespace DoomBot.Server.MongoDB
             return Collection.EstimatedDocumentCount(); 
         }
         
-        public async Task<List<T>> GetCollection<T>(string Type, HashSet<(BsonValue ID, T Data)> Pool)
+        public IEnumerable<BsonDocument> GetCollection<T>(string Type)
         {
+            if (LoadedFull.Contains(Type))
+            {
+                return default;
+            }
             
+            LoadedFull.Add(Type);
+
+            var Col = DB.GetCollection<BsonDocument>(Type);
+
+            return Col.Find(FilterDefinition<BsonDocument>.Empty).ToEnumerable();
         }
     }
 }

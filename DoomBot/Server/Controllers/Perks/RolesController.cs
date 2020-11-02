@@ -43,7 +43,7 @@ namespace DoomBot.Server.Controllers.Perks
         {
             using var RD = _RD;
 
-            return await RPM.TrySetRoleData(UA.AuthUser.GUser, RD);
+            return await RPM.TryApplyRoleData(UA.AuthUser.GUser, RD);
         }
     }
 }

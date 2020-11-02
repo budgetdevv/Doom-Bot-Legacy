@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <SupportedPlatform Include="browser" />
 	  <PackageReference Include="System.Drawing.Common" Version="5.0.0-rc.2.20475.5" />
+	  <SupportedPlatform Remove="Android" />
+	  <SupportedPlatform Remove="iOS" />
+	  <SupportedPlatform Remove="Linux" />
+	  <SupportedPlatform Remove="macOS" />
+	  <SupportedPlatform Remove="Windows" />
   </ItemGroup>
 
   <ItemGroup>

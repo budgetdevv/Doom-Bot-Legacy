@@ -22,7 +22,7 @@ public class RQComparer : IEqualityComparer<(ulong ChannelID, Queue<(IUserMessag
 
 public class ReactionQueue
 {
-    private static object Lock = 1;
+    private static object Lock = new object();
 
     private static int I;
 
