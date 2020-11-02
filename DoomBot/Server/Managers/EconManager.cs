@@ -42,8 +42,6 @@ namespace DoomBot.Server.Managers
 
         private readonly RolePerkModule RPM;
 
-        private List<ReorderRoleProperties> RoleCompiler;
-
         private readonly HashSet<(ulong UserID, DateTime Completion)> Cooldown;
 
         private Random Rand;
@@ -59,8 +57,6 @@ namespace DoomBot.Server.Managers
             this.IM = IM;
 
             this.RPM = RPM;
-
-            RoleCompiler = new List<ReorderRoleProperties>();
 
             Cooldown = new HashSet<(ulong UserID, DateTime Completion)>(new CooldownComparer());
 
@@ -114,8 +110,6 @@ namespace DoomBot.Server.Managers
             {
                 return;
             }
-
-            RoleCompiler.Clear();
 
             var OnlineUsers = Guild.Users;
 

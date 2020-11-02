@@ -4,6 +4,7 @@ using Discord.Rest;
 using Discord.WebSocket;
 using DoomBot.Server.Command;
 using DoomBot.Server.Controllers.Attributes;
+using DoomBot.Server.EM;
 using DoomBot.Server.Managers;
 using DoomBot.Server.Modules;
 using DoomBot.Server.MongoDB;
@@ -90,6 +91,7 @@ namespace DoomBot.Server
 
             Services.AddSingleton<PerksManager>();
             Services.AddSingleton<EconManager>();
+            Services.AddSingleton<EMManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

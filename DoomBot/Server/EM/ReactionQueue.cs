@@ -88,6 +88,8 @@ public class ReactionQueue
 
     private async Task ProcQueue(Queue<(IUserMessage Msg, string Reaction)> Queue)
     {
+        await Task.Delay(250);
+        
         while (Queue.Count != 0)
         {
             var ReactMsg = Queue.Dequeue();

@@ -21,7 +21,9 @@ namespace DoomBot.Server.Command
             this.Services = Services;
 
             Commands = Services.GetRequiredService<CommandService>();
+
             Client = Services.GetRequiredService<DiscordSocketClient>();
+
             EM = Services.GetRequiredService<EconManager>();
 
 

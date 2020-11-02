@@ -59,6 +59,8 @@ namespace DoomBot.Server.EM
         {
             if (AccessingUsers.Contains(User.Id))
             {
+                MC.SendMessageAsync("You have an Active menu! Please close it before launching another menu :>");
+                
                 return false;
             }
 
@@ -276,6 +278,8 @@ namespace DoomBot.Server.EM
 
             private bool SpecialButtons(string Emoji)
             {
+                Console.WriteLine(Emoji);
+                
                 switch (Emoji)
                 {
                     default: return false;
@@ -303,7 +307,7 @@ namespace DoomBot.Server.EM
                         break;
                     }
                     
-                    case "◀":
+                    case "◀️":
                     {
                         if (Page == 1)
                         {
@@ -317,7 +321,7 @@ namespace DoomBot.Server.EM
                         break;
                     }
                     
-                    case "▶":
+                    case "▶️":
                     {
                         if (!PageIsSync(++Page))
                         {
@@ -328,7 +332,7 @@ namespace DoomBot.Server.EM
 
                         _ = Compile(this);
                         
-                        break;
+                        break; 
                     }
                 }
 

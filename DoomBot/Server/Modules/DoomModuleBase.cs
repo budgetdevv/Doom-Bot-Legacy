@@ -121,7 +121,7 @@ namespace DoomBot.Server.Modules
         
         private ModuleDataWrapperInternal GenWrapper()
         {
-            return !InternalPool.TryDequeue(out var IWrapper) ? IWrapper : new ModuleDataWrapperInternal();
+            return InternalPool.TryDequeue(out var IWrapper) ? IWrapper : new ModuleDataWrapperInternal();
         }
         
         //Recycling wrappers to avoid GC
@@ -130,7 +130,7 @@ namespace DoomBot.Server.Modules
         {
             var IWrapper = GenWrapper();
 
-            IWrapper.SetID(ID);
+           IWrapper.SetID(ID);
 
             if (Pool.TryGetValue(IWrapper, out var Data))
             {

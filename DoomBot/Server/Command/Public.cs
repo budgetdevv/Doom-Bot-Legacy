@@ -80,8 +80,6 @@ namespace DoomBot.Server.Command
         [Command("lbcash", RunMode = RunMode.Async)]
         public async Task LBCash()
         {
-            Console.WriteLine("Mirror Dimension");
-            
             bool Success = EMM.Gen(Context.User, Context.Channel, async (EM) =>
             {
                 EM.Title = "Cash Leaderboard";
@@ -97,11 +95,6 @@ namespace DoomBot.Server.Command
                 
                 return true;
             });
-
-            if (!Success)
-            {
-                _ = ReplyAsync("NAHHH");
-            }
             
         }
     }
