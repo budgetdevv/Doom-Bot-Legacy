@@ -1,4 +1,4 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="C:\Users\Administrator\Desktop\DoomBot\Client\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="C:\Users\Administrator\Desktop\DoomBot\Client\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Administrator\Desktop\Code\DoomBot\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Administrator\Desktop\Code\DoomBot\Client\wwwroot\" />
 </StaticWebAssets>

@@ -32,19 +32,6 @@ namespace DoomBot.Server.Modules
     
     public class DoomModuleBase<T>
     {
-        private class ModuleDataPoolComparer : IEqualityComparer<ModuleDataWrapper<T>>
-        {
-            public bool Equals(ModuleDataWrapper<T> X, ModuleDataWrapper<T> Y)
-            {
-                return X.ID == Y.ID;
-            }
-
-            public int GetHashCode(ModuleDataWrapper<T> Obj)
-            {
-                return Obj.ID.GetHashCode();
-            }
-        }
-        
         private class ModuleDataWrapperInternal: ModuleDataWrapper<T>
         {
             public static void SetCallback(Action<ModuleDataWrapper<T>> Callback)
@@ -67,11 +54,9 @@ namespace DoomBot.Server.Modules
         
         private readonly MDB DB;
         
-        private readonly HashSet<ModuleDataWrapper<T>> Pool;
+        private readonly Dictionary<BsonValue, ModuleDataWrapper<T>> Pool;
 
         private readonly HashSet<ModuleDataWrapper<T>> UpdateQueue;
-
-        private readonly Queue<ModuleDataWrapperInternal> InternalPool;
 
         protected DoomModuleBase(string CollectionName, MDB DB)
         {
@@ -81,13 +66,9 @@ namespace DoomBot.Server.Modules
             
             this.DB = DB;
 
-            var Comparer = new ModuleDataPoolComparer();
+            Pool = new Dictionary<BsonValue, ModuleDataWrapper<T>>();
             
-            Pool = new HashSet<ModuleDataWrapper<T>>(Comparer);
-            
-            UpdateQueue = new HashSet<ModuleDataWrapper<T>>(Comparer);
-
-            InternalPool = new Queue<ModuleDataWrapperInternal>();
+            UpdateQueue = new HashSet<ModuleDataWrapper<T>>();
 
             Task.Run(Loop);
         }
@@ -102,8 +83,12 @@ namespace DoomBot.Server.Modules
 
                 foreach (var Data in UpdateQueue)
                 {
-                    Task.Run(async () => await UpdateData(Data));
+                    TaskList.Add(Task.Run(async () => await UpdateData(Data, false)));
                 }
+
+                await Task.WhenAll(TaskList);
+                
+                TaskList.Clear();
                 
                 await Task.Delay(10000);
             }
@@ -114,50 +99,39 @@ namespace DoomBot.Server.Modules
             UpdateQueue.Add(Data);
         }
 
-        protected async Task UpdateData(ModuleDataWrapper<T> Data)
+        protected async Task UpdateData(ModuleDataWrapper<T> Data, bool IsUpsert)
         {
-            await DB.Upsert(CollectionName, Data.ID, Data.Data);
+            await DB.Update(CollectionName, Data.ID, Data.Data, IsUpsert);
         }
-        
-        private ModuleDataWrapperInternal GenWrapper()
-        {
-            return InternalPool.TryDequeue(out var IWrapper) ? IWrapper : new ModuleDataWrapperInternal();
-        }
-        
+
         //Recycling wrappers to avoid GC
         
         protected async Task<ModuleDataWrapper<T>> TryGetData(BsonValue ID)
         {
-            var IWrapper = GenWrapper();
-
-           IWrapper.SetID(ID);
-
-            if (Pool.TryGetValue(IWrapper, out var Data))
+            if (Pool.TryGetValue(ID, out var Data))
             {
-                InternalPool.Enqueue(IWrapper);
-                
                 return Data;
             }
 
-            var DataT = await DB.Get<T>(CollectionName, ID);
+            var RawData = await DB.Get<T>(CollectionName, ID);
 
-            if (DataT == null)
+            if (RawData == null)
             {
-                InternalPool.Enqueue(IWrapper);
-
-                return null;
+                return default;
             }
-
-            IWrapper.SetData(DataT);
-
-            Pool.Add(IWrapper);
             
-            return IWrapper;
+            var IWrapper = new ModuleDataWrapperInternal();
+
+            IWrapper.SetID(ID);
+            
+            IWrapper.SetData(RawData);
+
+            return IWrapper; 
         }
 
         protected IEnumerable<ModuleDataWrapper<T>> GetCollection()
         {
-            foreach (var P in Pool)
+            foreach (var P in Pool.Values)
             {
                 yield return P;
             }
@@ -171,20 +145,20 @@ namespace DoomBot.Server.Modules
             
             foreach (var C in Col)
             {
-                var IWrapper = GenWrapper();
+                var ID = C["_id"];
                 
-                IWrapper.SetID(C["_id"]);
-
-                if (Pool.Contains(IWrapper))
+                if (Pool.ContainsKey(ID))
                 {
-                    InternalPool.Enqueue(IWrapper);
-                    
                     continue;
                 }
                 
+                var IWrapper = new ModuleDataWrapperInternal();
+                
+                IWrapper.SetID(ID);
+                
                 IWrapper.SetData(BsonSerializer.Deserialize<T>(C));
 
-                Pool.Add(IWrapper);
+                Pool.Add(ID, IWrapper);
                 
                 yield return IWrapper;
             }
@@ -192,42 +166,22 @@ namespace DoomBot.Server.Modules
 
         protected ModuleDataWrapper<T> CreateData(BsonValue ID, T Data)
         {
-            var IWrapper = GenWrapper();
+            var IWrapper = new ModuleDataWrapperInternal();
             
             IWrapper.SetID(ID);
             
             IWrapper.SetData(Data);
 
-            Pool.Add(IWrapper);
+            Pool.Add(ID, IWrapper);
 
-            UpdateQueue.Add(IWrapper);
+            _ = UpdateData(IWrapper, true);
 
             return IWrapper;
-        }
+        } 
 
-        protected async Task DeleteData(BsonValue ID, ModuleDataWrapper<T> Data)
-        {
-            InternalPool.Enqueue((ModuleDataWrapperInternal)Data);
-            
-            Pool.Remove(Data);
-
-            await DB.Delete<T>(CollectionName, ID);
-        }
-        
         protected async Task DeleteData(BsonValue ID)
         {
-            var IWrapper = GenWrapper();
-            
-            IWrapper.SetID(ID);
-
-            if (Pool.TryGetValue(IWrapper, out var Data))
-            {
-                Pool.Remove(Data);
-                
-                InternalPool.Enqueue((ModuleDataWrapperInternal)Data);
-            }
-            
-            InternalPool.Enqueue(IWrapper);
+            Pool.Remove(ID);
 
             await DB.Delete<T>(CollectionName, ID);
         }

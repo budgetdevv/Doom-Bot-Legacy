@@ -154,11 +154,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj",
       "projectName": "DoomBot.Shared",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"

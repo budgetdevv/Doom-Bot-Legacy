@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Client\\DoomBot.Client.csproj",
+    "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Client\\DoomBot.Client.csproj",
     "projectName": "DoomBot.Client",
-    "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Client\\DoomBot.Client.csproj",
-    "outputPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Client\\obj\\",
+    "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Client\\DoomBot.Client.csproj",
+    "outputPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Client\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "net50"
@@ -16,8 +16,8 @@
     "frameworks": {
       "netcoreapp5.0": {
         "projectReferences": {
-          "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj": {
-            "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj"
+          "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj": {
+            "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj"
           }
         }
       }
@@ -36,11 +36,6 @@
           "version": "[3.0.0, )"
         },
         "Microsoft.AspNetCore.Components.WebAssembly": {
-          "target": "Package",
-          "version": "[5.0.0-rc.2.20475.17, )"
-        },
-        "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
-          "suppressParent": "All",
           "target": "Package",
           "version": "[5.0.0-rc.2.20475.17, )"
         },

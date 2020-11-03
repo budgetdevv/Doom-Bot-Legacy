@@ -26,11 +26,11 @@ namespace DoomBot.Server.MongoDB
             LoadedFull = new HashSet<string>();
         }
 
-        public async Task Upsert<T>(string Type, BsonValue ID, T Data)
+        public async Task Update<T>(string Type, BsonValue ID, T Data, bool IsUpsert)
         {
             var Collection = DB.GetCollection<T>(Type);
 
-            await Collection.ReplaceOneAsync(Builders<T>.Filter.Eq("_id", ID), Data, new ReplaceOptions { IsUpsert = true });
+            await Collection.ReplaceOneAsync(Builders<T>.Filter.Eq("_id", ID), Data, new ReplaceOptions { IsUpsert = IsUpsert });
         }
 
         public async Task Delete<T>(string Type, BsonValue ID)

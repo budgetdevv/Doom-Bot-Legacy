@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj",
+    "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj",
     "projectName": "DoomBot.Shared",
-    "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj",
-    "outputPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\obj\\",
+    "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj",
+    "outputPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "net50"

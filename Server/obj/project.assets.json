@@ -6151,11 +6151,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Server\\DoomBot.Server.csproj",
+      "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Server\\DoomBot.Server.csproj",
       "projectName": "DoomBot.Server",
-      "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Server\\DoomBot.Server.csproj",
+      "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Server\\DoomBot.Server.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Server\\obj\\",
+      "outputPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6171,11 +6171,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Administrator\\Desktop\\DoomBot\\Client\\DoomBot.Client.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Client\\DoomBot.Client.csproj"
+            "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Client\\DoomBot.Client.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Client\\DoomBot.Client.csproj"
             },
-            "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj": {
-              "projectPath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Shared\\DoomBot.Shared.csproj"
+            "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj": {
+              "projectPath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Shared\\DoomBot.Shared.csproj"
             }
           }
         }

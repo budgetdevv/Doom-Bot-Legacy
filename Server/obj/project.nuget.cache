@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ee5HyE9EJjdTEkFJgjXEe2mZXtmaLIzk9BZWitrvn1W5pJWwYe5AL1pGvvP3sPHxfC34b4ZSpLLBjBgaOWxtjA==",
+  "dgSpecHash": "4XWfiO87Q4oourq4JWeZSLT6xrrfB2XmuSKoSXPTywTcv0Tvlk7HVEo8dme3RVFxXkBPneL5vBMARgXaRVsXGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\Server\\DoomBot.Server.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Server\\DoomBot.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\blazored.localstorage\\3.0.0\\blazored.localstorage.3.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\discord.net\\2.3.0-dev-20201028.4\\discord.net.2.3.0-dev-20201028.4.nupkg.sha512",
