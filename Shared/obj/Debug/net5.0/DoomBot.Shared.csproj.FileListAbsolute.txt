@@ -1,0 +1,14 @@
+C:\Users\Administrator\Desktop\DoomBot\Shared\bin\Debug\net5.0\DoomBot.Shared.deps.json
+C:\Users\Administrator\Desktop\DoomBot\Shared\bin\Debug\net5.0\DoomBot.Shared.dll
+C:\Users\Administrator\Desktop\DoomBot\Shared\bin\Debug\net5.0\ref\DoomBot.Shared.dll
+C:\Users\Administrator\Desktop\DoomBot\Shared\bin\Debug\net5.0\DoomBot.Shared.pdb
+C:\Users\Administrator\Desktop\DoomBot\Shared\bin\Debug\net5.0\Recycler.dll
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.csproj.CopyComplete
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.dll
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\ref\DoomBot.Shared.dll
+C:\Users\Administrator\Desktop\DoomBot\Shared\obj\Debug\net5.0\DoomBot.Shared.pdb
