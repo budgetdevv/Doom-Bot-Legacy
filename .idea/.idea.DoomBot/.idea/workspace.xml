@@ -14,20 +14,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/413/HashSet.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1695C3C1-488F-411E-A9C8-2DE07DF01A69/9/Queue.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/1695C3C1-488F-411E-A9C8-2DE07DF01A69/59/0a5bcab7/02000015pdb.il" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/68/88fdfc64/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/80B8258E-FFAE-4B83-B221-D4D2D82CA6A5/48/72fd0d21/BaseSocketClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/F8/ValueTuple.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1695C3C1-488F-411E-A9C8-2DE07DF01A69/76/daf8bf80/NullableAttribute.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/0c/bf6ca5d1/Void.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C259796E-CCF1-41D5-A691-24B74AA2E24E/5b/eae75e6c/FilterDefinitionBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/1695C3C1-488F-411E-A9C8-2DE07DF01A69/18/6ff87df5/02000003.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/D6527D31-771B-4948-AEEB-C76B7D0CDAAB/36/06ab7073/02000095.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86EF6253-9739-4DE8-9270-76A026F185CD/2f/6a432f7b/RequestOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/metadata/41D00D8A-F8EB-42DD-A928-FE303DFF9335/97/3c3bb79c/Recycler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41D00D8A-F8EB-42DD-A928-FE303DFF9335/bf/92c6a83e/Recycler`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Perks/PerkRole.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2B48B5C2-2231-4C57-BD75-6F9EE88B8008/a3/62a1d990/Func`2.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -40,12 +35,20 @@
         <option value="$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/Perks/RolePerkModule.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Modules/Inventory/InventoryModule.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/Managers/EconManager.cs" />
-        <option value="$PROJECT_DIR$/DoomBot/Server/EM/ReactionQueue.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/EM/EmbedMenu.cs" />
-        <option value="$PROJECT_DIR$/DoomBot/Server/Command/Public.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Server/EM/EMManager.cs" />
         <option value="$PROJECT_DIR$/DoomBot/Client/Pages/RolePerk.razor" />
         <option value="$PROJECT_DIR$/DoomBot/Client/Shared/HeroMed.razor" />
+        <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D6527D31-771B-4948-AEEB-C76B7D0CDAAB/95/fe7cd28b/RequestOptions.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Shared/DoomBot.Shared.csproj" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/Startup.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/obj/project.assets.json" />
+        <option value="$PROJECT_DIR$/DoomBot/Client/obj/project.assets.json" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/DoomBot.Server.csproj" />
+        <option value="$PROJECT_DIR$/DoomBot/Client/DoomBot.Client.csproj" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/Command/Public.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Server/EM/ReactionQueue.cs" />
+        <option value="$PROJECT_DIR$/DoomBot/Shared/obj/project.assets.json" />
       </list>
     </option>
   </component>
@@ -58,11 +61,29 @@
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30065006" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="RiderIisExpressOptionsPageId" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Publish to folder.Publish DoomBot.Client to folder">
-    <configuration name="Publish DoomBot.Client to folder" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
-      <riderPublish runtime="win-x64" target_folder="C:\Users\Administrator\Desktop\DoomBot\DoomBot\Client\bin\Release\net5.0\browser-wasm\publish" target_framework="netcoreapp5.0" uuid_high="1036051614343578763" uuid_low="-6028358942032405405" />
+  <component name="RunManager" selected="Publish to folder.Publish DoomBot.Server to folder (3)">
+    <configuration name="Publish DoomBot.Server to folder (1)" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="$PROJECT_DIR$/../../../../DoomBotServer" target_framework="netcoreapp5.0" uuid_high="4540224371554993888" uuid_low="-5097818782441386053" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DoomBot.Server to folder (2)" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="$PROJECT_DIR$/../../../../DoomBotServer" target_framework="netcoreapp5.0" uuid_high="4540224371554993888" uuid_low="-5097818782441386053" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DoomBot.Server to folder (3)" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="$PROJECT_DIR$/../../../../DoomBotServer" target_framework="netcoreapp5.0" uuid_high="4540224371554993888" uuid_low="-5097818782441386053" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DoomBot.Server to folder" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish self_contained="true" uuid_high="4540224371554993888" uuid_low="-5097818782441386053" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Yes" type="DotNetFolderPublish" factoryName="Publish to folder" singleton="false" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="$PROJECT_DIR$/../../../../DoomBotServer" target_framework="netcoreapp5.0" uuid_high="4540224371554993888" uuid_low="-5097818782441386053" />
       <method v="2" />
     </configuration>
     <configuration name="DoomBot.Client: DoomBot" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -130,15 +151,37 @@
       <item itemvalue=".NET Launch Settings Profile.DoomBot.Client: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.DoomBot.Server" />
       <item itemvalue=".NET Launch Settings Profile.DoomBot.Server: IIS Express" />
-      <item itemvalue="Publish to folder.Publish DoomBot.Client to folder" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Server to folder" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (1)" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (2)" />
+      <item itemvalue="Publish to folder.Yes" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (3)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Publish to folder.Publish DoomBot.Client to folder" />
+        <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (3)" />
+        <item itemvalue="Publish to folder.Yes" />
+        <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (2)" />
+        <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (1)" />
+        <item itemvalue="Publish to folder.Publish DoomBot.Server to folder" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a1d992a-be4d-4c59-b791-12ff9d2d8dcc" name="Default Changelist" comment="" />
+      <created>1604364144672</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604364144672</updated>
+      <workItem from="1604364147682" duration="39000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
@@ -149,22 +192,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604322589426" />
-    <state width="1877" height="374" key="GridCell.Tab.0.bottom" timestamp="1604357854189">
+    <state x="718" y="380" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1604371792790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="374" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
-    <state width="1877" height="374" key="GridCell.Tab.0.center" timestamp="1604357854189">
+    <state x="718" y="380" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1040@0.0.1920.1040" timestamp="1604371792790" />
+    <state width="1384" height="289" key="GridCell.Tab.0.bottom" timestamp="1604373465531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="374" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
-    <state width="1877" height="374" key="GridCell.Tab.0.left" timestamp="1604357854189">
+    <state width="1384" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604373465531" />
+    <state width="1384" height="289" key="GridCell.Tab.0.center" timestamp="1604373465531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="374" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
-    <state width="1877" height="374" key="GridCell.Tab.0.right" timestamp="1604357854189">
+    <state width="1384" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604373465531" />
+    <state width="1384" height="289" key="GridCell.Tab.0.left" timestamp="1604373465531">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="374" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604357854189" />
+    <state width="1384" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604373465531" />
+    <state width="1384" height="289" key="GridCell.Tab.0.right" timestamp="1604373465531">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1384" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604373465531" />
     <state width="1877" height="374" key="GridCell.Tab.1.bottom" timestamp="1604357854189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,17 +280,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="821" y="209" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604264648681" />
-    <state x="568" y="157" width="1107" height="710" key="SettingsEditor" timestamp="1604322098507">
+    <state x="568" y="157" width="1107" height="710" key="SettingsEditor" timestamp="1604375287519">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="568" y="157" width="1107" height="710" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604322098507" />
-    <state x="638" y="119" width="644" height="801" key="find.popup" timestamp="1604321053239">
+    <state x="568" y="157" width="1107" height="710" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604375287519" />
+    <state x="1000" y="237" width="644" height="801" key="find.popup" timestamp="1604372411138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="638" y="119" width="644" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604321053239" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604270890716">
+    <state x="1000" y="237" width="644" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604372411138" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604372400989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604270890716" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604372400989" />
   </component>
 </project>

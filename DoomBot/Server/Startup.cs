@@ -100,7 +100,7 @@ namespace DoomBot.Server
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseWebAssemblyDebugging();
+                //app.UseWebAssemblyDebugging();
             }
             else
             {

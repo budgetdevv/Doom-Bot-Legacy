@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+vGMoxvlryiQCtTZWiB/2L/pjtixur/Ar05LiSbHHibx7ZNP4K/6AlE27sEsOyirPUd8mHLbr1lcHfjhHkri4Q==",
+  "dgSpecHash": "tQKOS0RpiL21tMCF+OI039OiflNEu28Zz1Q8cqqim4Df2ZmCftN1KHqZYQLfq1PPpgD1BjdMb/IRygZ7fZlkYQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\DoomBot\\DoomBot\\Client\\DoomBot.Client.csproj",
   "expectedPackageFiles": [
@@ -32,8 +32,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0-rc.2.20475.5\\microsoft.win32.systemevents.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\5.0.0-rc.2.20475.5\\system.drawing.common.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.io.pipelines\\5.0.0-rc.2.20475.5\\system.io.pipelines.5.0.0-rc.2.20475.5.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\5.0.0-rc.2.20475.5\\system.text.json.5.0.0-rc.2.20475.5.nupkg.sha512",
-    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.0-rc.2.20475.5\\microsoft.netcore.app.runtime.browser-wasm.5.0.0-rc.2.20475.5.nupkg.sha512"
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.text.json\\5.0.0-rc.2.20475.5\\system.text.json.5.0.0-rc.2.20475.5.nupkg.sha512"
   ],
   "logs": []
 }

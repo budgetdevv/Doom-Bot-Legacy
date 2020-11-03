@@ -88,20 +88,18 @@ public class ReactionQueue
     {
         while (Queue.Count != 0)
         {
-            var ReactMsg = Queue.Peek();
+            await Task.Delay(250);
 
-            var Msg = ReactMsg.Msg;
+            var (Msg, Reaction) = Queue.Dequeue();
 
             if (Msg != default)
             {
                 var DT = DateTime.UtcNow;
 
-                await Msg.AddReactionAsync(new Emoji(ReactMsg.Reaction), BypassRL);
+                await Msg.AddReactionAsync(new Emoji(Reaction), BypassRL);
                 
                 Console.WriteLine((DateTime.UtcNow - DT).TotalMilliseconds);
             }
-
-            Queue.Dequeue();
         }
     }
 }

@@ -10,7 +10,6 @@
       "net50"
     ],
     "sources": {
-      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {},
       "https://www.myget.org/F/discord-net/api/v3/index.json": {}
     },
@@ -34,7 +33,7 @@
       "dependencies": {
         "Discord.Net": {
           "target": "Package",
-          "version": "[2.3.0-dev-20200710.2, )"
+          "version": "[2.3.0-dev-20201028.4, )"
         },
         "IdGen": {
           "target": "Package",
@@ -42,7 +41,7 @@
         },
         "Microsoft.AspNetCore.Components.WebAssembly.Server": {
           "target": "Package",
-          "version": "[3.2.1, )"
+          "version": "[5.0.0-rc.2.20475.17, )"
         },
         "MongoDB.Driver": {
           "target": "Package",
