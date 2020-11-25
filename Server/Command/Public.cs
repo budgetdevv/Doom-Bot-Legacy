@@ -95,7 +95,14 @@ namespace DoomBot.Server.Command
                 
                 return true;
             });
+        }
+
+        [Command("tickets", RunMode = RunMode.Async)]
+        public async Task Tickets()
+        {
+            var Inv = await IM.GetOrCreateInv((long)Context.User.Id);
             
+            Inv.Data
         }
     }
 }

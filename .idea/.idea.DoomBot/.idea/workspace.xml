@@ -7,24 +7,69 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="23df0c54-03c9-4532-81e6-1394894f7514" name="Default Changelist" comment="" />
+    <list default="true" id="23df0c54-03c9-4532-81e6-1394894f7514" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.DoomBot/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DoomBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DoomBot/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/ClientUserData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Client/ClientUserData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/DoomBot.Client.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Client/DoomBot.Client.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/DoomBot.Client.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/DoomBot.Client.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/Debug/net5.0/DoomBot.Client.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/Debug/net5.0/DoomBot.Client.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/DoomBot.Client.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/DoomBot.Client.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/DoomBot.Client.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/DoomBot.Client.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/DoomBot.Client.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/DoomBot.Client.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Client/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Command/Public.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Command/Public.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net5.0/DoomBot.Server.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net5.0/DoomBot.Server.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/DoomBot.Server.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/DoomBot.Server.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net5.0/DoomBot.Shared.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net5.0/DoomBot.Shared.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1DAFFDCA-5183-4959-8756-DC3A79020B86/e5/4b575f73/IServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1DAFFDCA-5183-4959-8756-DC3A79020B86/B/ServiceCollectionDescriptorExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1DAFFDCA-5183-4959-8756-DC3A79020B86/8/ServiceDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1DAFFDCA-5183-4959-8756-DC3A79020B86/7/ServiceCollectionServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Client/Program.cs" />
-        <option value="$PROJECT_DIR$/Server/DoomBot.Server.csproj" />
         <option value="$PROJECT_DIR$/Client/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/Server/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/Server/Program.cs" />
-        <option value="$PROJECT_DIR$/Client/DoomBot.Client.csproj" />
         <option value="$PROJECT_DIR$/Server/Mongo/MDB.cs" />
         <option value="$PROJECT_DIR$/Server/Modules/DoomModuleBase.cs" />
+        <option value="$PROJECT_DIR$/Client/DoomBot.Client.csproj" />
+        <option value="$PROJECT_DIR$/Server/DoomBot.Server.csproj" />
+        <option value="$PROJECT_DIR$/Client/Program.cs" />
+        <option value="$PROJECT_DIR$/Server/Startup.cs" />
+        <option value="$PROJECT_DIR$/Server/ReactionHandler.cs" />
+        <option value="$PROJECT_DIR$/Client/ClientUserData.cs" />
+        <option value="$PROJECT_DIR$/Server/Command/GuildPublic.cs" />
+        <option value="$PROJECT_DIR$/Server/Command/Public.cs" />
+        <option value="$PROJECT_DIR$/Server/Modules/Inventory/Inventory.cs" />
       </list>
     </option>
   </component>
@@ -44,8 +89,16 @@
       <riderPublish runtime="win-x64" self_contained="true" target_framework="netcoreapp5.0" uuid_high="6373098473897019142" uuid_low="-5743145915405015511" />
       <method v="2" />
     </configuration>
-    <configuration name="Publish DoomBot.Client to folder" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+    <configuration name="Publish DoomBot.Client to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish target_folder="$PROJECT_DIR$/Client/bin/Debug" target_framework="netcoreapp5.0" uuid_high="6373098473897019142" uuid_low="-5743145915405015511" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DoomBot.Server to folder (1)" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="C:\DoomBotServer" target_framework="netcoreapp5.0" uuid_high="-1627725241823182092" uuid_low="-6650902654264497546" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish DoomBot.Server to folder (2)" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish runtime="win-x64" target_folder="C:\DoomBotServer" target_framework="netcoreapp5.0" uuid_high="-1627725241823182092" uuid_low="-6650902654264497546" />
       <method v="2" />
     </configuration>
     <configuration name="Publish DoomBot.Server to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
@@ -120,17 +173,31 @@
       <item itemvalue="Publish to folder.Publish DoomBot.Server to folder" />
       <item itemvalue="Publish to folder.Publish DoomBot.Client to folder" />
       <item itemvalue="Publish to folder.Publish DoomBot.Client to folder (1)" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (1)" />
+      <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (2)" />
+        <item itemvalue="Publish to folder.Publish DoomBot.Server to folder (1)" />
         <item itemvalue="Publish to folder.Publish DoomBot.Client to folder (1)" />
-        <item itemvalue="Publish to folder.Publish DoomBot.Client to folder" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
@@ -143,22 +210,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="439" y="132" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604439495902" />
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1604439719068">
+    <state width="1877" height="270" key="GridCell.Tab.0.bottom" timestamp="1604440599824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604439719068" />
-    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1604439719068">
+    <state width="1877" height="270" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604440599824" />
+    <state width="1877" height="270" key="GridCell.Tab.0.center" timestamp="1604440599824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604439719067" />
-    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1604439719067">
+    <state width="1877" height="270" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604440599824" />
+    <state width="1877" height="270" key="GridCell.Tab.0.left" timestamp="1604440599824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604439719067" />
-    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1604439719068">
+    <state width="1877" height="270" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604440599824" />
+    <state width="1877" height="270" key="GridCell.Tab.0.right" timestamp="1604440599824">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604439719068" />
+    <state width="1877" height="270" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604440599824" />
     <state width="1921" height="383" key="GridCell.Tab.1.bottom" timestamp="1604407497530">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -116,7 +116,7 @@ namespace DoomBot.Client
                 }
             }
 
-            OnDownloadComplete.Invoke();
+            OnDownloadComplete?.Invoke();
         }
 
         public async Task UpdateRoleData()
@@ -153,7 +153,7 @@ namespace DoomBot.Client
 
             BaseData = default;
 
-            OnDownloadComplete.Invoke();
+            OnDownloadComplete?.Invoke();
         }
     }
 }

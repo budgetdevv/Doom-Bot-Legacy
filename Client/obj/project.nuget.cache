@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Az66YwFBf1/StUFaX6v0jTgiZWD32xyRBYrXPcJc00bRNVFurbVRX71sqDGlKfEAhRdvN1VcPwf9l+CQMI+++g==",
+  "dgSpecHash": "NpMm3SH8oTdYQ3KukoONmOq3nZoPzqcsDBe74ZuSG0/LOqaxSwbcgXv7UdIYuz9+RqXcaFZ6HjMDeiL0WkN9VA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Administrator\\Desktop\\Code\\DoomBot\\Client\\DoomBot.Client.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.forms.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.web\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.web.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.webassembly.5.0.0-rc.2.20475.17.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.components.webassembly.devserver.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnetcore.metadata\\5.0.0-rc.2.20475.17\\microsoft.aspnetcore.metadata.5.0.0-rc.2.20475.17.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.5.0.0-rc.2.20475.5.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0-rc.2.20475.5\\microsoft.extensions.configuration.abstractions.5.0.0-rc.2.20475.5.nupkg.sha512",

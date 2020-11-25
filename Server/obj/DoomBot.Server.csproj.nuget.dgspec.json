@@ -51,6 +51,11 @@
               "target": "Package",
               "version": "[5.0.0-rc.2.20475.17, )"
             },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.0-rc.2.20475.17, )"
+            },
             "System.Net.Http.Json": {
               "target": "Package",
               "version": "[5.0.0-rc.2.20475.5, )"
